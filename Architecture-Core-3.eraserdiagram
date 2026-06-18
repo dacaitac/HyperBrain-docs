@@ -1,0 +1,22 @@
+cloud-architecture-diagram
+
+title Core
+
+SQS [icon: aws-simple-queue-service]
+EventRouter[icon: route]
+postgres [icon: postgres]
+SyncServ [icon: refresh-cw]
+CoreRepo [icon: database]
+Consumer [icon: log-in]
+Producer [icon: log-out]
+IEventHandler [icon: orbit]
+IEventHandler -> CoreRepo
+CoreRepo      -> postgres
+
+SQS           ->  Consumer
+SQS           <-  Producer
+Consumer      ->  EventRouter
+EventRouter   <->  IEventHandler, SyncServ
+
+SyncServ -> Producer
+SyncServ -> CoreRepo

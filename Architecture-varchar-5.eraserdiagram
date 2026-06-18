@@ -1,0 +1,249 @@
+entity-relationship-diagram
+
+// ── ENUMS (Documentación de referencia) ──
+// enum core_executable_status {
+//   todo
+//   in_progress
+//   done
+//   failed
+//   planned
+// }
+//
+// enum core_executable_type {
+//   task
+//   habit
+//   lead_measure
+//   activity
+//   agenda
+// }
+//
+// enum brain_idea_status {
+//   raw
+//   refining
+//   archived
+//   converted
+// }
+//
+// enum context_event_source {
+//   manual
+//   system
+//   integration
+// }
+//
+// enum fin_account_type {
+//   asset      // Activo (Suma a tu patrimonio, ej. Cuentas, Efectivo)
+//   liability  // Pasivo (Resta a tu patrimonio, ej. Tarjetas de Crédito)
+// }
+//
+// enum fin_transaction_type {
+//   income     // Ingreso
+//   expense    // Gasto
+//   transfer   // Transferencia (Pagos a tarjetas o fondeo de metas)
+// }
+//
+// enum fin_transaction_status {
+//   planned    // Planificado a futuro
+//   pending    // En proceso / Retenido
+//   completed  // Completado
+// }
+//
+// enum fin_goal_status {
+//   saving     // En Ahorro
+//   funded     // Fondeada (Lista para ejecución)
+//   completed  // Cumplida (Gastada)
+// }
+
+// ── SCHEMA: core ──
+
+core_executable {
+  id uuid pk
+  name varchar
+  description text
+  status core_executable_status
+  type core_executable_type
+  frequency integer
+
+  start_time timestamptz
+  end_time timestamptz
+  completion_date timestamptz
+  last_modified_date timestamptz
+
+  is_important boolean
+  energy_drain integer// 1 - 5
+  mental_load integer // 1 - 5
+  impact integer      // 1 - 5
+  
+  priority_score double  
+  urgence_score double 
+  effort_score double
+  
+  estimated_cost numeric
+  estimated_minutes integer  
+
+  source_calendar varchar
+  parent_id uuid
+  cycle_id uuid
+}
+
+core_cycle {
+  id uuid pk
+  name varchar
+  start_date date
+  end_date date
+  status varchar
+  type varchar
+  parent_id uuid
+}
+
+// ── SCHEMA: brain ──
+
+brain_idea {
+  id uuid pk
+  title varchar
+  content text
+  status brain_idea_status
+  created_at timestamptz
+  converted_to_id uuid
+}
+
+context_event {
+  id uuid pk
+  source context_event_source
+  provider varchar
+  event_type varchar
+  content text
+  payload jsonb
+  occurred_at timestamptz
+  tags string
+}
+
+// ── SCHEMA: telemetry ──
+
+tel_sleep_record {
+  id uuid pk
+  start_time timestamptz
+  end_time timestamptz
+  duration_minutes integer
+  sleep_score integer
+  stages jsonb
+  collected_at timestamptz
+}
+
+tel_activity_stream {
+  id uuid pk
+  bucket_name varchar
+  app_name varchar
+  window_title text
+  start_time timestamptz
+  end_time timestamptz
+  duration_seconds integer
+  is_afk boolean
+  raw_payload jsonb
+}
+
+// ── SCHEMA: common ──
+
+outbox_events {
+  id uuid pk
+  aggregate_type varchar
+  aggregate_id varchar
+  event_type varchar
+  payload jsonb
+  occurred_at timestamptz
+  processed boolean
+  source_system varchar
+}
+
+// ── SCHEMA: finance ──
+
+fin_account [color: Orange] {
+  id uuid pk
+  name varchar
+  type varchar // usa fin_account_type
+  balance numeric
+  currency varchar
+  is_active boolean
+}
+
+fin_category [color: Orange] {
+  id uuid pk
+  name varchar
+  parent_id uuid
+  flow_type varchar // income, expense
+}
+
+fin_budget [color: Orange] {
+  id uuid pk
+  name varchar
+  start_date date
+  end_date date
+  category_id uuid
+  limit_amount numeric
+}
+
+fin_transaction [color: Orange] {
+  id uuid pk
+  executable_id uuid // FK a Tarea/Item específico
+  cycle_id uuid // FK a Proyecto macro (Bolsa General)
+  amount numeric
+  currency varchar
+  description varchar
+  type varchar // usa fin_transaction_type
+  occurred_at timestamptz
+  status varchar // usa fin_transaction_status
+  origin_account_id uuid
+  destination_account_id uuid
+  category_id uuid
+}
+
+fin_goal [color: Orange] {
+  id uuid pk
+  name varchar
+  target_amount numeric
+  accumulated_amount numeric
+  status varchar // usa fin_goal_status
+  target_date date  
+  executable_id uuid // Integración: Meta para Tarea/Item específico
+  cycle_id uuid // Integración: Bolsa General de Proyecto
+}
+
+// ── SCHEMA: sync ──
+
+sync_mappings {
+  id uuid pk
+  local_id uuid
+  external_system varchar
+  external_id varchar
+  last_known_checksum varchar
+  last_synced_at timestamptz
+  sync_status varchar
+}
+
+// ── RELATIONSHIPS ──
+
+// Self-references
+core_cycle.id < core_cycle.parent_id
+core_executable.id < core_executable.parent_id
+fin_category.id < fin_category.parent_id
+
+// Core & Finance (Presupuestos, Transacciones y Metas)
+core_cycle.id < core_executable.cycle_id
+fin_category.id < fin_budget.category_id
+fin_account.id < fin_transaction.origin_account_id
+fin_account.id < fin_transaction.destination_account_id
+fin_category.id < fin_transaction.category_id
+
+// Integración Cruzada (Gestión Productividad -> Finanzas)
+core_executable.id < fin_transaction.executable_id
+core_cycle.id < fin_transaction.cycle_id // Para gastos a nivel proyecto
+core_cycle.id < fin_goal.cycle_id // Para Bolsas Generales de Proyectos
+core_executable.id < fin_goal.executable_id // Para Metas de ítems específicos
+
+// Sync Mapping Core
+core_executable.id < sync_mappings.local_id
+
+
+// Brain & Telemetry Integrations
+core_executable.id < brain_idea.converted_to_id
+tel_sleep_record.id < sync_mappings.local_id
+tel_activity_stream.id < sync_mappings.local_id
