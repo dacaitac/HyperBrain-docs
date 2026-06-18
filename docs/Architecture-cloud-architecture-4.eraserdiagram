@@ -1,0 +1,46 @@
+cloud-architecture-diagram
+
+NAS [color: green] {
+  Files [color: black] {
+    Educacion [color: orange] {
+      Colegio,
+      PosgradoTry,
+      Cursos,
+      UNAL [icon: google-drive],
+      PapelesUN,
+      Documentos,
+    }
+
+    Documents[icon: document, color: orange] {
+      Code
+      Finanzas
+      Papeles
+      Otros
+    }
+  }
+
+
+  Multimedia[icon: aperture, color: purple] {
+    Fotos
+    GU
+    immich
+    Videos
+  }
+
+  Software {
+
+  }
+}
+
+mac-mini [icon: apple, color: blue]{
+  iCloud        [icon: cloud-sync]
+  i7.danielcc   [icon: google-drive]
+}
+
+BACKUP        [icon: hard-drive]
+
+
+NAS         <->   BACKUP
+iCloud   <->   i7.danielcc
+iCloud      <->   Documents
+iCloud       ->   immich

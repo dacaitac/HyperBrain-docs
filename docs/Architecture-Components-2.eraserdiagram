@@ -1,0 +1,44 @@
+cloud-architecture-diagram
+
+title Components
+styleMode plain
+colorMode bold
+UI[icon: app-window] {
+ Notion     [icon: notion]
+ iCloud     [icon: cloud]
+ Appsmith   [icon: app] 
+ Messaging  [icon: message-circle]
+}
+
+Gateway     [icon: aws-lambda]
+SQS [icon: aws-simple-queue-service]
+Core [icon: hexagon, color: green, colorMode: bold]
+RAG         [icon: database]
+OpenClaw    [icon: workflow]
+postgres    [icon: postgres]
+eventAPI    [icon: calendar-check-2]
+Sentinel    [icon: sentinelone]
+iaService   [icon: robot]
+OutboxWorker [icon: external-link]
+
+Notion      <-->  Gateway:  REST
+iCloud      ->    Sentinel: eventKit
+Sentinel    ->    Gateway:  REST
+Messaging   <-->  Gateway:  REST
+eventAPI    <-    Gateway:  REST
+eventAPI    ->    iCloud:   eventKit
+
+
+Gateway     <->   SQS: JSON
+Core        <->   SQS
+OutboxWorker ->   SQS
+postgres     ->   OutboxWorker   
+
+Appsmith    <->   postgres
+Core        ->    postgres
+
+iaService   ->    RAG
+iaService   ->    OpenClaw
+iaService   <->   SQS
+
+

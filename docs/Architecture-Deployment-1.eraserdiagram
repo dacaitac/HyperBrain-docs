@@ -1,0 +1,53 @@
+cloud-architecture-diagram
+
+title Deployment
+Messaging [icon: message-circle]
+iCloud [icon: cloud, color: blue] {
+  Reminders [icon: calendar-check]
+  Calendar [icon: calendar]
+}
+
+TAILSCALE  [icon: network, color: red, colorMode: pastel] {
+  AppleDevice [icon: apple]
+  MAC MINI [icon: apple, color: gray]{
+    Sentinel [icon: sentinelone]
+    eventAPI [icon: calendar-check-2]
+    "Ollama-MLX" [icon: ollama]
+  }
+
+  daniel-ubuntu [icon: ubuntu, color: green] {
+    HyperBrain [icon: brain-circuit, color: orange] {
+      Postgres [icon: postgres]
+      RAG [icon: database]
+      Backend [icon: server-cog]
+      Appsmith [icon: app]
+      OpenRouter [icon: openrouter]
+      OpenClaw [icon: workflow]
+      Kafka [icon: kafka]
+    }
+  }
+}
+
+Appsmith > Postgres
+
+Backend > Postgres
+Backend > OpenRouter
+Backend > RAG
+Backend > OpenClaw
+Backend > eventAPI: REST
+
+OpenClaw > OpenRouter
+OpenRouter > "Ollama-MLX"
+
+AppleDevice > Appsmith: WebUI
+AppleDevice <>  iCloud
+
+Messaging > Backend: Webhook
+Sentinel > Kafka: Swift
+Postgres >  Kafka
+
+Kafka <>  Backend
+
+iCloud > Sentinel
+eventAPI > iCloud: Swift
+
