@@ -71,6 +71,8 @@ nav:
       - Configuración: getting-started/configuration.md
   - Arquitectura:
       - Visión General: architecture/overview.md
+      - Flujo del Sistema: architecture/system-flow.md
+      - Diagramas (Eraser.io): architecture/diagrams.md
   - API:
       - Referencia: api/reference.md
   - Contribuir: contributing.md
