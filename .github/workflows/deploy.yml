@@ -13,11 +13,52 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - run: pip install mkdocs-material
+      - name: Sincronizar diagramas de Eraser.io
+        run: |
+          mkdir -p docs/assets/diagrams
 
-      - run: mkdocs gh-deploy --force
+          # Mapeo de nombres especiales (tab name → nombre limpio)
+          declare -A name_map
+          name_map["varchar"]="data-model"
+          # Agrega aquí más mappings si cambias nombres de tabs en Eraser
+
+          for png in .eraser/*.png; do
+            [ -f "$png" ] || continue
+            filename=$(basename "$png")
+
+            # Extraer el nombre del tab: *---diagram----<hash>-<TabName>.png
+            if [[ "$filename" =~ ---diagram----[a-f0-9]+-([A-Za-z_-]+)\.png$ ]]; then
+              tab_name="${BASH_REMATCH[1]}"
+              lower_name="${tab_name,,}"
+              # Aplicar mapeo especial si existe
+              dest_name="${name_map[$lower_name]:-$lower_name}"
+            else
+              # Sin sufijo de tab = primer diagrama (cloud-architecture)
+              dest_name="cloud-architecture"
+            fi
+
+            dest="docs/assets/diagrams/${dest_name}.png"
+            cp "$png" "$dest"
+            echo "✅ $filename → $dest"
+          done
+
+      - name: Commit diagramas si cambiaron
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/assets/diagrams/
+          git diff --staged --quiet && echo "Sin cambios en diagramas" || \
+            git commit -m "chore: sync diagramas desde Eraser.io"
+
+      - name: Instalar dependencias
+        run: pip install mkdocs-material mkdocs-glightbox
+
+      - name: Deploy a GitHub Pages
+        run: mkdocs gh-deploy --force

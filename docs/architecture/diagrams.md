@@ -1,6 +1,7 @@
 # Diagramas de Arquitectura
 
 Diagramas generados y mantenidos en [Eraser.io](https://app.eraser.io/workspace/qufdoKZ8oNs9GJjafWv0).
+Haz clic en cualquier imagen para verla en pantalla completa.
 
 > ✏️ **[Abrir y editar en Eraser](https://app.eraser.io/workspace/qufdoKZ8oNs9GJjafWv0)**
 
@@ -8,7 +9,7 @@ Diagramas generados y mantenidos en [Eraser.io](https://app.eraser.io/workspace/
 
 ## Deployment
 
-Diagrama de despliegue de infraestructura del sistema.
+Infraestructura de despliegue: dispositivos, red Tailscale, servicios y conectividad con iCloud.
 
 ![Deployment](../assets/diagrams/deployment.png)
 
@@ -16,7 +17,7 @@ Diagrama de despliegue de infraestructura del sistema.
 
 ## Components
 
-Diagrama de componentes y sus relaciones.
+Vista de componentes del sistema y sus interacciones.
 
 ![Components](../assets/diagrams/components.png)
 
@@ -24,7 +25,7 @@ Diagrama de componentes y sus relaciones.
 
 ## Core
 
-Diagrama del núcleo del sistema.
+Núcleo del sistema: manejo de eventos, repositorios y workers.
 
 ![Core](../assets/diagrams/core.png)
 
@@ -32,19 +33,14 @@ Diagrama del núcleo del sistema.
 
 ## Cloud Architecture
 
-Arquitectura en la nube.
+Arquitectura de almacenamiento en la nube, NAS y servicios conectados.
 
 ![Cloud Architecture](../assets/diagrams/cloud-architecture.png)
 
 ---
 
-## Varchar
+## Modelo de Datos
 
-![Varchar](../assets/diagrams/varchar.png)
+Esquema de la base de datos: entidades, relaciones y tipos.
 
----
-
-!!! tip "Actualizar diagramas"
-    Cuando actualices un diagrama en Eraser.io y lo sincronices al repositorio,
-    copia los PNGs actualizados desde `.eraser/` hacia `docs/assets/diagrams/`
-    con los nombres limpios correspondientes.
+![Modelo de Datos](../assets/diagrams/data-model.png)
