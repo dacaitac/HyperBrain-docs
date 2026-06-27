@@ -9,7 +9,7 @@
         <meta name="author" content="dacaitac">
       
       
-        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/architecture/data-model/">
+        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/Gemini-Ideas/Arquitectura%20y%20Modelado%20de%20Sistema%20de%20Finanzas%20Personales/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>Modelo de Datos (ERD) - HyperBrain Docs</title>
+        <title>Arquitectura y Modelado de Sistema de Finanzas Personales - HyperBrain Docs</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modelo-de-datos-erd" class="md-skip">
+        <a href="#1-objetivo-principal" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modelo de Datos (ERD)
+              Arquitectura y Modelado de Sistema de Finanzas Personales
             
           </span>
         </div>
@@ -2341,8 +2341,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2351,10 +2349,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#diagrama-erd" class="md-nav__link">
+  <a href="#1-objetivo-principal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diagrama ERD
+        1. Objetivo Principal
       
     </span>
   </a>
@@ -2362,22 +2360,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#especificacion-de-dominios" class="md-nav__link">
+  <a href="#2-fundamentos-teoricos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Especificación de Dominios
+        2. Fundamentos Teóricos
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Especificación de Dominios">
+    <nav class="md-nav" aria-label="2. Fundamentos Teóricos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-gestion-de-usuarios-y-seguridad-mvp" class="md-nav__link">
+  <a href="#21-cuentas-vs-metas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Gestión de Usuarios y Seguridad (MVP)
+        2.1 Cuentas vs. Metas
       
     </span>
   </a>
@@ -2385,43 +2383,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-productividad-y-ejecucion-core" class="md-nav__link">
+  <a href="#22-el-triangulo-de-control" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Productividad y Ejecución (Core)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-sincronizacion-y-prevencion-de-loops" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Sincronización y Prevención de Loops
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-aprendizaje-continuo-learning-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Aprendizaje Continuo (Learning Engine)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-inteligencia-artificial-brain-telemetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Inteligencia Artificial (Brain &amp; Telemetry)
+        2.2 El Triángulo de Control
       
     </span>
   </a>
@@ -2430,6 +2395,145 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-diccionario-de-datos-estructura-relacional-3nf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Diccionario de Datos (Estructura Relacional 3NF)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Diccionario de Datos (Estructura Relacional 3NF)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-de-gestion-externoexistente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módulo de Gestión (Externo/Existente)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-financiero-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módulo Financiero (Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reglas-de-negocio-y-casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Reglas de Negocio y Casos de Uso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Reglas de Negocio y Casos de Uso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-gestion-de-bolsas-generales-y-alcance-dinamico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Gestión de Bolsas Generales y Alcance Dinámico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-gestion-de-tarjetas-de-credito-y-deudas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Gestión de Tarjetas de Crédito y Deudas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-presupuestos-dinamicos-y-automatizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Presupuestos Dinámicos y Automatización
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ejemplos-de-evolucion-estados-de-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Ejemplos de Evolución (Estados de Tiempo)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ejemplos de Evolución (Estados de Tiempo)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estado-1-inicio-y-provision-de-bolsa-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estado 1: Inicio y Provisión de Bolsa General
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estado-2-ejecucion-de-gasto-a-credito-y-pago" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estado 2: Ejecución de Gasto a Crédito y Pago
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Resumen
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2453,265 +2557,95 @@
   
 
 
-<h1 id="modelo-de-datos-erd">Modelo de Datos (ERD)<a class="headerlink" href="#modelo-de-datos-erd" title="Permanent link">¶</a></h1>
-<p>Este documento define el modelo de datos relacional para el MVP de HyperBrain, complementado con la <strong>Gestión de Usuarios</strong> y los <strong>Mecanismos de Sincronización</strong> para sistemas externos.</p>
-<p>El siguiente diagrama Entidad-Relación (ERD) en Mermaid representa los seis dominios principales del ecosistema (Users, Core, Finance, Telemetry, Brain, Sync/Common) y cómo interactúan entre sí.</p>
-<h2 id="diagrama-erd">Diagrama ERD<a class="headerlink" href="#diagrama-erd" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>erDiagram
-    %% --- USERS DOMAIN (MVP &amp; Security) ---
-    SYS_USER ||--o{ CORE_EXECUTABLE : "owns"
-    SYS_USER ||--o{ FIN_ACCOUNT : "owns"
-    SYS_USER ||--o{ SYNC_CREDENTIAL : "configures"
+  <h1>Arquitectura y Modelado de Sistema de Finanzas Personales</h1>
 
-    SYS_USER {
-        UUID id PK
-        String email
-        String password_hash
-        String role "ADMIN, USER"
-        String status "ACTIVE, INACTIVE"
-        OffsetDateTime created_at
-    }
-
-    SYNC_CREDENTIAL {
-        UUID id PK
-        UUID user_id FK
-        String provider "NOTION, APPLE, N8N"
-        String access_token
-        String refresh_token
-        OffsetDateTime expires_at
-    }
-
-    %% --- CORE DOMAIN (Productivity &amp; Execution) ---
-    CORE_CYCLE ||--o{ CORE_EXECUTABLE : "organizes"
-    CORE_EXECUTABLE ||--o{ CORE_EXECUTABLE : "hierarchy (parentId)"
-    CORE_EXECUTABLE ||--|| CORE_EXECUTION_PROFILE : "profile"
-    CORE_EXECUTABLE ||--o{ CORE_TIME_BLOCK : "tracks"
-    CORE_PROJECT ||--o{ CORE_EXECUTABLE : "groups"
-    CORE_PROJECT ||--o{ FIN_GOAL : "links goal"
-
-    CORE_CYCLE {
-        UUID id PK
-        String name
-        LocalDate start_date
-        LocalDate end_date
-        String type "MCI, ROUTINE, PHASE"
-        String status "ACTIVE, COMPLETED"
-    }
-
-    CORE_EXECUTABLE {
-        UUID id PK
-        UUID user_id FK
-        UUID parent_id FK
-        UUID cycle_id FK
-        String name
-        String description
-        String type "TASK, HABIT, LEAD_MEASURE, ACTIVITY, AGENDA"
-        String status "TODO, IN_PROGRESS, DONE, FAILED, PLANNED"
-        Double priority_score
-        Double urgence_score
-        Double effort_score
-        BigDecimal estimated_cost
-        OffsetDateTime start_time
-        OffsetDateTime end_time
-        String source_calendar
-    }
-
-    CORE_EXECUTION_PROFILE {
-        UUID executable_id PK, FK
-        Integer estimated_minutes
-        Integer energy_drain "1-5"
-        Integer mental_load "1-5"
-        Integer impact "1-8 (Fibonacci)"
-    }
-
-    CORE_TIME_BLOCK {
-        UUID id PK
-        UUID executable_id FK
-        OffsetDateTime date_start
-        OffsetDateTime date_end
-        Integer actual_duration_minutes
-    }
-
-    CORE_PROJECT {
-        UUID id PK
-        String name
-        String status
-    }
-
-    %% --- FINANCE DOMAIN ---
-    FIN_ACCOUNT ||--o{ FIN_TRANSACTION : "origin/dest"
-    FIN_CATEGORY ||--o{ FIN_TRANSACTION : "classifies"
-    FIN_CATEGORY ||--o{ FIN_BUDGET : "restricts"
-    FIN_GOAL ||--o{ FIN_TRANSACTION : "contributes to"
-    CORE_EXECUTABLE ||--o{ FIN_TRANSACTION : "real cost"
-
-    FIN_ACCOUNT {
-        UUID id PK
-        UUID user_id FK
-        String name
-        String type "ASSET, LIABILITY"
-        BigDecimal balance
-        String currency
-    }
-
-    FIN_TRANSACTION {
-        UUID id PK
-        UUID executable_id FK
-        UUID origin_account_id FK
-        UUID destination_account_id FK
-        UUID category_id FK
-        UUID cycle_id FK
-        BigDecimal amount
-        String currency
-        String description
-        String type "INCOME, EXPENSE, TRANSFER"
-        String status "PLANNED, PENDING, COMPLETED"
-        OffsetDateTime occurred_at
-    }
-
-    FIN_CATEGORY {
-        UUID id PK
-        UUID parent_id FK
-        String name
-        String flow_type "INCOME, EXPENSE"
-    }
-
-    FIN_GOAL {
-        UUID id PK
-        UUID cycle_id FK
-        UUID executable_id FK
-        String name
-        BigDecimal target_amount
-        BigDecimal accumulated_amount
-        String status "SAVING, FUNDED, COMPLETED"
-        LocalDate target_date
-    }
-
-    FIN_BUDGET {
-        UUID id PK
-        UUID category_id FK
-        String name
-        LocalDate start_date
-        LocalDate end_date
-        BigDecimal limit_amount
-    }
-
-    %% --- TELEMETRY &amp; COGNITIVE DOMAIN ---
-    TEL_SLEEP_RECORD {
-        UUID id PK
-        OffsetDateTime start_time
-        OffsetDateTime end_time
-        Integer duration_minutes
-        Integer sleep_score
-        JSONB stages
-        OffsetDateTime collected_at
-    }
-
-    TEL_ACTIVITY_STREAM {
-        UUID id PK
-        String app_name
-        String window_title
-        OffsetDateTime start_time
-        Integer duration_seconds
-        Boolean is_afk
-    }
-
-    BRAIN_IDEA {
-        UUID id PK
-        String title
-        String content
-        String status "RAW, REFINING, ARCHIVED, CONVERTED"
-        UUID converted_to_id FK "Maps to CoreExecutable"
-        OffsetDateTime created_at
-    }
-
-    CONTEXT_EVENT {
-        UUID id PK
-        String source "MANUAL, SYSTEM, INTEGRATION"
-        String provider
-        String event_type
-        String content
-        JSONB payload
-        OffsetDateTime occurred_at
-    }
-
-    %% --- LEARNING DOMAIN (Study Manager) ---
-    CORE_EXECUTABLE ||--o{ LRN_ASSESSMENT : "triggers evaluation"
-    LRN_TOPIC ||--o{ LRN_ASSESSMENT : "is evaluated in"
-
-    LRN_TOPIC {
-        UUID id PK
-        UUID user_id FK
-        String name
-        String description
-        String status "ACTIVE, MASTERED, ARCHIVED"
-        Integer current_score "0-100"
-        OffsetDateTime next_review_date
-    }
-
-    LRN_ASSESSMENT {
-        UUID id PK
-        UUID topic_id FK
-        UUID executable_id FK
-        Integer score_internals "0-100"
-        Integer score_architecture "0-100"
-        Integer score_production "0-100"
-        Integer score_seniority "0-100"
-        Integer score_general "0-100"
-        String identified_gaps
-        String recommended_prompt "PROMPT_A, PROMPT_B, PROMPT_C, PROMPT_D, PROMPT_E"
-        OffsetDateTime assessed_at
-    }
-
-    %% --- SYNC &amp; SYSTEM INFRASTRUCTURE ---
-    SYNC_MAPPINGS {
-        UUID id PK
-        UUID local_id "ID of CoreExecutable or FinTx"
-        String external_system "NOTION, APPLE"
-        String external_id "ID in Notion or EventKit"
-        String last_known_checksum "Hash for Loop Protection"
-        String sync_status
-        OffsetDateTime last_synced_at
-    }
-
-    OUTBOX_EVENTS {
-        UUID id PK
-        String aggregate_type
-        String aggregate_id
-        String event_type
-        JSONB payload
-        Boolean processed
-        String source_system "Loop Protection"
-        OffsetDateTime occurred_at
-    }
-
-    %% Relationships Mapping
-    CORE_EXECUTABLE ||--o{ SYNC_MAPPINGS : "syncs via"
-    FIN_TRANSACTION ||--o{ SYNC_MAPPINGS : "syncs via"
-    CORE_EXECUTABLE ||--o{ BRAIN_IDEA : "originates from"</code></pre>
-<h2 id="especificacion-de-dominios">Especificación de Dominios<a class="headerlink" href="#especificacion-de-dominios" title="Permanent link">¶</a></h2>
-<h3 id="1-gestion-de-usuarios-y-seguridad-mvp">1. Gestión de Usuarios y Seguridad (MVP)<a class="headerlink" href="#1-gestion-de-usuarios-y-seguridad-mvp" title="Permanent link">¶</a></h3>
-<p>Para el MVP, se introduce el schema de usuarios que rige la autenticación y el control de acceso:
-- <strong><code>SYS_USER</code></strong>: Define si un usuario es <code>ADMIN</code> (ej. el SysAdmin que despliega la infraestructura) o <code>USER</code>. Centraliza la propiedad de cuentas financieras, tareas y credenciales de integración.
-- <strong><code>SYNC_CREDENTIAL</code></strong>: Almacena de forma segura los tokens de acceso para Notion, Apple y n8n, permitiendo la comunicación saliente autenticada.</p>
-<h3 id="2-productividad-y-ejecucion-core">2. Productividad y Ejecución (Core)<a class="headerlink" href="#2-productividad-y-ejecucion-core" title="Permanent link">¶</a></h3>
+<h2 id="1-objetivo-principal">1. Objetivo Principal<a class="headerlink" href="#1-objetivo-principal" title="Permanent link">¶</a></h2>
+<p>Establecer la arquitectura de datos y la lógica de negocio para un sistema de gestión financiera personal que permita:
+1.  Ahorrar para objetivos específicos y gestionar presupuestos globales (bolsas de proyectos).
+2.  Controlar el flujo de caja mediante presupuestos dinámicos.
+3.  Administrar pasivos (deudas y tarjetas de crédito) sin alterar la liquidez real.
+4.  Integrarse con un sistema de gestión de proyectos y tareas, trazando el costo real de salidas, eventos e iniciativas a gran escala.</p>
+<hr>
+<h2 id="2-fundamentos-teoricos">2. Fundamentos Teóricos<a class="headerlink" href="#2-fundamentos-teoricos" title="Permanent link">¶</a></h2>
+<p>El sistema opera bajo la estricta separación de la realidad física del dinero y su propósito lógico, estructurado en lo que se denomina el <strong>Triángulo de Control</strong>.</p>
+<h3 id="21-cuentas-vs-metas">2.1 Cuentas vs. Metas<a class="headerlink" href="#21-cuentas-vs-metas" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong><code>CORE_EXECUTABLE</code></strong>: La unidad de ejecución base. Puede ser una tarea aislada, un hábito o una medida de predicción (<em>Lead Measure</em>). </li>
-<li><strong><code>CORE_EXECUTION_PROFILE</code></strong>: Desacopla las métricas cualitativas (impacto de Fibonacci, carga mental) del núcleo de la tarea, crucial para el motor de priorización de la IA.</li>
-<li><strong><code>CORE_CYCLE</code> &amp; <code>CORE_PROJECT</code></strong>: Permiten agrupar estratégicamente los ejecutables alineados a metodologías GTD o 4DX.</li>
+<li><strong>Cuentas (La Realidad Física):</strong> Representan el lugar donde reside el dinero o la deuda (ej. Cuenta de Ahorros, Efectivo, Tarjeta de Crédito). Responden a la pregunta: <em>¿Dónde está el dinero?</em> Son vitales para la conciliación bancaria.</li>
+<li><strong>Metas / Fondos de Amortización (El Propósito Lógico):</strong> Son subdivisiones virtuales (bolsillos contables). Responden a la pregunta: <em>¿Para qué es ese dinero?</em> Permiten fraccionar un único saldo bancario en múltiples objetivos (viajes, compras) sin requerir cuentas bancarias separadas.</li>
 </ul>
-<h3 id="3-sincronizacion-y-prevencion-de-loops">3. Sincronización y Prevención de Loops<a class="headerlink" href="#3-sincronizacion-y-prevencion-de-loops" title="Permanent link">¶</a></h3>
-<p>La consistencia es mantenida por el patrón <code>SYNC_MAPPINGS</code>.
-- <strong><code>SYNC_MAPPINGS</code></strong>: Mapeo polimórfico mediante <code>local_id</code>. Almacena el <code>last_known_checksum</code> para validar que un cambio proveniente de Notion o Apple sea <strong>real</strong> y no producto de un evento reflejado (Loop Protection).
-- <strong><code>OUTBOX_EVENTS</code></strong>: Patrón de persistencia distribuida para inyectar con seguridad a Kafka (<em>Transactional Outbox</em>).</p>
-<h3 id="4-aprendizaje-continuo-learning-engine">4. Aprendizaje Continuo (Learning Engine)<a class="headerlink" href="#4-aprendizaje-continuo-learning-engine" title="Permanent link">¶</a></h3>
-<p>Este módulo se acopla a la productividad para fungir como un "Gestor de Estudio" impulsado por IA:
-- <strong><code>LRN_TOPIC</code></strong>: El tema a dominar. Rastrea su estado de maestría (<code>current_score</code>) y la fecha de su próximo repaso espaciado.
-- <strong><code>LRN_ASSESSMENT</code></strong>: Registro inmutable de cada sesión de estudio (evaluada por la IA). Guarda puntajes específicos (Internals, Architecture, Production) y detecta las brechas técnicas. Su resultado dicta qué Prompt (A, B, C, D o E) debe utilizarse en la siguiente iteración. Está fuertemente ligado a un <code>CORE_EXECUTABLE</code> para integrar el esfuerzo cognitivo con el <code>Agenda Planner</code>.</p>
-<h3 id="5-inteligencia-artificial-brain-telemetry">5. Inteligencia Artificial (Brain &amp; Telemetry)<a class="headerlink" href="#5-inteligencia-artificial-brain-telemetry" title="Permanent link">¶</a></h3>
-<p>Las tablas de este dominio actúan como el histórico <em>crudo</em> que consultan el RAG y los LLMs:
-- <strong><code>TEL_SLEEP_RECORD</code> / <code>TEL_ACTIVITY_STREAM</code></strong>: Sensores pasivos que afectan directamente los multiplicadores de la fórmula del <code>Agenda Planner</code>.
-- <strong><code>BRAIN_IDEA</code></strong>: Ingesta NLP cruda antes de ser refinada en un <code>CORE_EXECUTABLE</code>.</p>
+<h3 id="22-el-triangulo-de-control">2.2 El Triángulo de Control<a class="headerlink" href="#22-el-triangulo-de-control" title="Permanent link">¶</a></h3>
+<p>La arquitectura no acopla directamente el presupuesto a la meta, sino que cruza sus funciones mediante las transacciones:
+1.  <strong>Categorías:</strong> Clasifican la naturaleza del gasto a corto plazo (ej. "Alimentación").
+2.  <strong>Presupuestos:</strong> Ponen un límite de gasto a las categorías en un rango de fechas.
+3.  <strong>Metas:</strong> Acumulan capital a largo plazo para un proyecto. Al ejecutar el gasto de una meta, este impacta su respectiva categoría, consumiendo presupuesto si aplica, pero financiándose del fondo acumulado.</p>
+<hr>
+<h2 id="3-diccionario-de-datos-estructura-relacional-3nf">3. Diccionario de Datos (Estructura Relacional 3NF)<a class="headerlink" href="#3-diccionario-de-datos-estructura-relacional-3nf" title="Permanent link">¶</a></h2>
+<p>La integración bidireccional se logra mediante llaves foráneas opcionales (<code>id_proyecto</code>, <code>id_tarea</code>) en el módulo financiero.</p>
+<h3 id="modulo-de-gestion-externoexistente">Módulo de Gestión (Externo/Existente)<a class="headerlink" href="#modulo-de-gestion-externoexistente" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong><code>Proyectos</code></strong>: Agrupadores macro.<ul>
+<li><code>id_proyecto</code> (PK), <code>nombre</code> (Varchar), <code>estado</code> (Enum).</li>
+</ul>
+</li>
+<li><strong><code>Tareas</code></strong>: Eventos o ítems específicos.<ul>
+<li><code>id_tarea</code> (PK), <code>id_proyecto</code> (FK nula), <code>nombre</code> (Varchar), <code>estado</code> (Enum), <strong><code>costo_estimado</code> (Decimal)</strong>, <code>fecha_ejecucion</code> (Date).</li>
+</ul>
+</li>
+</ul>
+<h3 id="modulo-financiero-core">Módulo Financiero (Core)<a class="headerlink" href="#modulo-financiero-core" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong><code>Cuentas</code></strong>: Contenedores físicos o legales.<ul>
+<li><code>id_cuenta</code> (PK), <code>nombre</code> (Varchar), <code>tipo</code> (Enum: Activo, Pasivo), <code>saldo_actual</code> (Decimal).</li>
+</ul>
+</li>
+<li><strong><code>Categorias</code></strong>: Clasificación contable.<ul>
+<li><code>id_categoria</code> (PK), <code>nombre</code> (Varchar), <code>tipo_flujo</code> (Enum: Ingreso, Gasto).</li>
+</ul>
+</li>
+<li><strong><code>Metas_Financieras</code></strong>: Fondos de amortización o bolsas generales.<ul>
+<li><code>id_meta</code> (PK), <code>nombre</code> (Varchar), <code>monto_objetivo</code> (Decimal), <code>monto_acumulado</code> (Decimal), <code>id_proyecto</code> (FK nula), <code>estado</code> (Enum: En Ahorro, Fondeada, Cumplida).</li>
+</ul>
+</li>
+<li><strong><code>Presupuestos</code></strong>: Control temporal de gastos.<ul>
+<li><code>id_presupuesto</code> (PK), <strong><code>fecha_inicio</code> (Date)</strong>, <strong><code>fecha_fin</code> (Date)</strong>, <code>id_categoria</code> (FK), <code>monto_limite</code> (Decimal).</li>
+</ul>
+</li>
+<li><strong><code>Transacciones</code></strong>: El libro mayor.<ul>
+<li><code>id_transaccion</code> (PK), <code>fecha</code> (DateTime), <code>monto</code> (Decimal), <code>tipo</code> (Enum: Gasto, Ingreso, Transferencia), <code>estado</code> (Enum: Planificado, Completado), <code>id_cuenta_origen</code> (FK nula), <code>id_cuenta_destino</code> (FK nula), <code>id_categoria</code> (FK nula), <code>id_proyecto</code> (FK nula), <code>id_tarea</code> (FK nula), <code>descripcion</code> (Varchar).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-reglas-de-negocio-y-casos-de-uso">4. Reglas de Negocio y Casos de Uso<a class="headerlink" href="#4-reglas-de-negocio-y-casos-de-uso" title="Permanent link">¶</a></h2>
+<h3 id="41-gestion-de-bolsas-generales-y-alcance-dinamico">4.1 Gestión de Bolsas Generales y Alcance Dinámico<a class="headerlink" href="#41-gestion-de-bolsas-generales-y-alcance-dinamico" title="Permanent link">¶</a></h3>
+<p>Cuando se tiene un proyecto macro (ej. Equipar Hogar por 15M) pero no se han definido los ítems, se crea una Meta tipo "Bolsa General".
+* <strong>Regla:</strong> El <code>monto_objetivo</code> de la Bolsa General es la suma dinámica del <code>costo_estimado</code> de todas las tareas pendientes asociadas a ese proyecto. Si se añade una tarea nueva, el objetivo global sube automáticamente. Al ejecutar un gasto para una tarea, el dinero sale del <code>monto_acumulado</code> de la bolsa.</p>
+<h3 id="42-gestion-de-tarjetas-de-credito-y-deudas">4.2 Gestión de Tarjetas de Crédito y Deudas<a class="headerlink" href="#42-gestion-de-tarjetas-de-credito-y-deudas" title="Permanent link">¶</a></h3>
+<p>Las tarjetas de crédito se modelan como cuentas de tipo <strong>Pasivo</strong>.
+* <strong>La Compra (Endeudamiento):</strong> Se registra un <code>Gasto</code> desde la cuenta Pasivo. Esto afecta el presupuesto de la categoría y aumenta la deuda en la cuenta, pero no reduce el saldo de tus cuentas Activo.
+* <strong>El Pago de la Tarjeta:</strong> Se registra como una <code>Transferencia</code> desde una cuenta Activo (ej. Cuenta Corriente) hacia la cuenta Pasivo (Tarjeta de Crédito). <strong>No es un gasto</strong>, es un traslado de dinero que neutraliza la deuda.</p>
+<h3 id="43-presupuestos-dinamicos-y-automatizacion">4.3 Presupuestos Dinámicos y Automatización<a class="headerlink" href="#43-presupuestos-dinamicos-y-automatizacion" title="Permanent link">¶</a></h3>
+<p>Los presupuestos operan mediante rangos de fechas (<code>fecha_inicio</code>, <code>fecha_fin</code>) para soportar ciclos no estandarizados (semanales, quincenales).
+* <strong>Automatización:</strong> El sistema debe utilizar un <em>Cron Job</em> que lea una tabla de plantillas y genere automáticamente los registros de la tabla <code>Presupuestos</code> al iniciar cada ciclo, aplicando reglas de arrastre (acumular el sobrante) o reseteo (base cero) según la configuración.</p>
+<hr>
+<h2 id="5-ejemplos-de-evolucion-estados-de-tiempo">5. Ejemplos de Evolución (Estados de Tiempo)<a class="headerlink" href="#5-ejemplos-de-evolucion-estados-de-tiempo" title="Permanent link">¶</a></h2>
+<p><strong>Contexto:</strong> Se planifica un proyecto de Equipamiento de Hogar (PRJ-003) estimado en 15M. Se cuenta con una Cuenta Corriente (Activo) y una Tarjeta de Crédito (Pasivo).</p>
+<h3 id="estado-1-inicio-y-provision-de-bolsa-general">Estado 1: Inicio y Provisión de Bolsa General<a class="headerlink" href="#estado-1-inicio-y-provision-de-bolsa-general" title="Permanent link">¶</a></h3>
+<p>Se inyectan 4M a la bolsa del proyecto hogar sin definir aún qué comprar.</p>
+<p><strong>Metas_Financieras:</strong>
+* <code>MET-001</code> (Bolsa General Hogar) -&gt; Objetivo: 15M | Acumulado: 4M | Proyecto: PRJ-003</p>
+<p><strong>Transacciones:</strong>
+* <code>TX-001</code> | Ingreso | +8M | Destino: Cta. Corriente | Salario
+* <code>TX-002</code> | <strong>Transf.</strong> | 4M | Origen: Cta. Corriente | Destino: Bolsillo Hogar | Proyecto: PRJ-003 | <em>Nota: Fondeo de la bolsa.</em></p>
+<h3 id="estado-2-ejecucion-de-gasto-a-credito-y-pago">Estado 2: Ejecución de Gasto a Crédito y Pago<a class="headerlink" href="#estado-2-ejecucion-de-gasto-a-credito-y-pago" title="Permanent link">¶</a></h3>
+<p>Se compra un escritorio de 1.5M usando la Tarjeta de Crédito y se registra una salida casual de 100k. Días después, se paga la tarjeta con el dinero que estaba guardado en la bolsa del hogar.</p>
+<p><strong>Transacciones:</strong>
+* <code>TX-003</code> | <strong>Gasto</strong> | 1.5M | Origen: Tarjeta Crédito (Pasivo) | Cat: Hogar | Proyecto: PRJ-003 | Tarea: TAR-104 | <em>Nota: Aumenta la deuda, ejecuta presupuesto, usa fondos del proyecto lógicamente.</em>
+* <code>TX-004</code> | <strong>Gasto</strong> | 100k | Origen: Cta. Corriente (Activo) | Cat: Ocio | Tarea: TAR-105 | <em>Nota: Salida casual vinculada directamente a una tarea.</em>
+* <code>TX-005</code> | <strong>Transf.</strong> | 1.5M | Origen: Bolsillo Hogar | Destino: Tarjeta Crédito | <em>Nota: Se usa el dinero ahorrado (provisión) para liquidar la deuda adquirida por la compra del escritorio.</em></p>
+<hr>
+<h2 id="6-resumen">6. Resumen<a class="headerlink" href="#6-resumen" title="Permanent link">¶</a></h2>
+<p>El sistema está diseñado bajo el principio de partida doble simplificada y alta cohesión relacional. Aísla las entidades financieras mediante el control de <strong>Cuentas</strong> (para rastrear la ubicación del dinero y deudas) y <strong>Metas</strong> (para gestionar la acumulación de ahorros e intenciones de gasto). La integración con la gestión de tareas se efectúa de manera opcional a nivel transaccional. Esto asegura que operaciones complejas, como el uso de crédito para proyectos a gran escala o la modificación dinámica de estimaciones de costos, se resuelvan algorítmicamente mediante transferencias internas y sumatorias de llaves foráneas, garantizando en todo momento la integridad del patrimonio, la precisión del presupuesto y la trazabilidad del costo por proyecto.</p>
 
 
 

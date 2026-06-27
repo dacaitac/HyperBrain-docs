@@ -9,9 +9,13 @@
         <meta name="author" content="dacaitac">
       
       
-        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/architecture/data-model/">
+        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/02-architecture/deployment/">
       
       
+        <link rel="prev" href="../tech-stack/">
+      
+      
+        <link rel="next" href="../components/">
       
       
         
@@ -22,7 +26,7 @@
     
     
       
-        <title>Modelo de Datos (ERD) - HyperBrain Docs</title>
+        <title>Despliegue - HyperBrain Docs</title>
       
     
     
@@ -83,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modelo-de-datos-erd" class="md-skip">
+        <a href="#arquitectura-de-despliegue" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -117,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modelo de Datos (ERD)
+              Despliegue
             
           </span>
         </div>
@@ -269,11 +273,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../02-architecture/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -1303,6 +1309,8 @@
       
   
   
+    
+  
   
   
     
@@ -1330,22 +1338,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../02-architecture/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1363,13 +1372,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1389,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/tech-stack/" class="md-nav__link">
+      <a href="../tech-stack/" class="md-nav__link">
         
   
   
@@ -1414,10 +1423,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../02-architecture/deployment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Despliegue
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1433,6 +1469,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#topologia-de-nodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topología de Nodos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion-de-nodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descripción de Nodos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1445,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/components/" class="md-nav__link">
+      <a href="../components/" class="md-nav__link">
         
   
   
@@ -1473,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/data-model/" class="md-nav__link">
+      <a href="../data-model/" class="md-nav__link">
         
   
   
@@ -1501,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/diagrams/" class="md-nav__link">
+      <a href="../diagrams/" class="md-nav__link">
         
   
   
@@ -1547,10 +1625,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1559,7 +1640,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7">
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
             
   
   
@@ -1595,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/engines/prioritizer/" class="md-nav__link">
+      <a href="../engines/prioritizer/" class="md-nav__link">
         
   
   
@@ -1623,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/engines/planner/" class="md-nav__link">
+      <a href="../engines/planner/" class="md-nav__link">
         
   
   
@@ -1651,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/engines/learning/" class="md-nav__link">
+      <a href="../engines/learning/" class="md-nav__link">
         
   
   
@@ -1679,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/engines/finance/" class="md-nav__link">
+      <a href="../engines/finance/" class="md-nav__link">
         
   
   
@@ -1707,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/engines/messaging/" class="md-nav__link">
+      <a href="../engines/messaging/" class="md-nav__link">
         
   
   
@@ -1759,10 +1840,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1771,7 +1855,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8">
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
             
   
   
@@ -1807,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/theory/4dx/" class="md-nav__link">
+      <a href="../theory/4dx/" class="md-nav__link">
         
   
   
@@ -1835,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/theory/gtd/" class="md-nav__link">
+      <a href="../theory/gtd/" class="md-nav__link">
         
   
   
@@ -1863,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/theory/spaced-repetition/" class="md-nav__link">
+      <a href="../theory/spaced-repetition/" class="md-nav__link">
         
   
   
@@ -1891,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-architecture/theory/triangle-of-control/" class="md-nav__link">
+      <a href="../theory/triangle-of-control/" class="md-nav__link">
         
   
   
@@ -2351,10 +2435,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#diagrama-erd" class="md-nav__link">
+  <a href="#topologia-de-nodos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diagrama ERD
+        Topología de Nodos
       
     </span>
   </a>
@@ -2362,74 +2446,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#especificacion-de-dominios" class="md-nav__link">
+  <a href="#descripcion-de-nodos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Especificación de Dominios
+        Descripción de Nodos
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Especificación de Dominios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-gestion-de-usuarios-y-seguridad-mvp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Gestión de Usuarios y Seguridad (MVP)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-productividad-y-ejecucion-core" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Productividad y Ejecución (Core)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-sincronizacion-y-prevencion-de-loops" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Sincronización y Prevención de Loops
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-aprendizaje-continuo-learning-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Aprendizaje Continuo (Learning Engine)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-inteligencia-artificial-brain-telemetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Inteligencia Artificial (Brain &amp; Telemetry)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2453,265 +2476,78 @@
   
 
 
-<h1 id="modelo-de-datos-erd">Modelo de Datos (ERD)<a class="headerlink" href="#modelo-de-datos-erd" title="Permanent link">¶</a></h1>
-<p>Este documento define el modelo de datos relacional para el MVP de HyperBrain, complementado con la <strong>Gestión de Usuarios</strong> y los <strong>Mecanismos de Sincronización</strong> para sistemas externos.</p>
-<p>El siguiente diagrama Entidad-Relación (ERD) en Mermaid representa los seis dominios principales del ecosistema (Users, Core, Finance, Telemetry, Brain, Sync/Common) y cómo interactúan entre sí.</p>
-<h2 id="diagrama-erd">Diagrama ERD<a class="headerlink" href="#diagrama-erd" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>erDiagram
-    %% --- USERS DOMAIN (MVP &amp; Security) ---
-    SYS_USER ||--o{ CORE_EXECUTABLE : "owns"
-    SYS_USER ||--o{ FIN_ACCOUNT : "owns"
-    SYS_USER ||--o{ SYNC_CREDENTIAL : "configures"
-
-    SYS_USER {
-        UUID id PK
-        String email
-        String password_hash
-        String role "ADMIN, USER"
-        String status "ACTIVE, INACTIVE"
-        OffsetDateTime created_at
-    }
-
-    SYNC_CREDENTIAL {
-        UUID id PK
-        UUID user_id FK
-        String provider "NOTION, APPLE, N8N"
-        String access_token
-        String refresh_token
-        OffsetDateTime expires_at
-    }
-
-    %% --- CORE DOMAIN (Productivity &amp; Execution) ---
-    CORE_CYCLE ||--o{ CORE_EXECUTABLE : "organizes"
-    CORE_EXECUTABLE ||--o{ CORE_EXECUTABLE : "hierarchy (parentId)"
-    CORE_EXECUTABLE ||--|| CORE_EXECUTION_PROFILE : "profile"
-    CORE_EXECUTABLE ||--o{ CORE_TIME_BLOCK : "tracks"
-    CORE_PROJECT ||--o{ CORE_EXECUTABLE : "groups"
-    CORE_PROJECT ||--o{ FIN_GOAL : "links goal"
-
-    CORE_CYCLE {
-        UUID id PK
-        String name
-        LocalDate start_date
-        LocalDate end_date
-        String type "MCI, ROUTINE, PHASE"
-        String status "ACTIVE, COMPLETED"
-    }
-
-    CORE_EXECUTABLE {
-        UUID id PK
-        UUID user_id FK
-        UUID parent_id FK
-        UUID cycle_id FK
-        String name
-        String description
-        String type "TASK, HABIT, LEAD_MEASURE, ACTIVITY, AGENDA"
-        String status "TODO, IN_PROGRESS, DONE, FAILED, PLANNED"
-        Double priority_score
-        Double urgence_score
-        Double effort_score
-        BigDecimal estimated_cost
-        OffsetDateTime start_time
-        OffsetDateTime end_time
-        String source_calendar
-    }
-
-    CORE_EXECUTION_PROFILE {
-        UUID executable_id PK, FK
-        Integer estimated_minutes
-        Integer energy_drain "1-5"
-        Integer mental_load "1-5"
-        Integer impact "1-8 (Fibonacci)"
-    }
-
-    CORE_TIME_BLOCK {
-        UUID id PK
-        UUID executable_id FK
-        OffsetDateTime date_start
-        OffsetDateTime date_end
-        Integer actual_duration_minutes
-    }
-
-    CORE_PROJECT {
-        UUID id PK
-        String name
-        String status
-    }
-
-    %% --- FINANCE DOMAIN ---
-    FIN_ACCOUNT ||--o{ FIN_TRANSACTION : "origin/dest"
-    FIN_CATEGORY ||--o{ FIN_TRANSACTION : "classifies"
-    FIN_CATEGORY ||--o{ FIN_BUDGET : "restricts"
-    FIN_GOAL ||--o{ FIN_TRANSACTION : "contributes to"
-    CORE_EXECUTABLE ||--o{ FIN_TRANSACTION : "real cost"
-
-    FIN_ACCOUNT {
-        UUID id PK
-        UUID user_id FK
-        String name
-        String type "ASSET, LIABILITY"
-        BigDecimal balance
-        String currency
-    }
-
-    FIN_TRANSACTION {
-        UUID id PK
-        UUID executable_id FK
-        UUID origin_account_id FK
-        UUID destination_account_id FK
-        UUID category_id FK
-        UUID cycle_id FK
-        BigDecimal amount
-        String currency
-        String description
-        String type "INCOME, EXPENSE, TRANSFER"
-        String status "PLANNED, PENDING, COMPLETED"
-        OffsetDateTime occurred_at
-    }
-
-    FIN_CATEGORY {
-        UUID id PK
-        UUID parent_id FK
-        String name
-        String flow_type "INCOME, EXPENSE"
-    }
-
-    FIN_GOAL {
-        UUID id PK
-        UUID cycle_id FK
-        UUID executable_id FK
-        String name
-        BigDecimal target_amount
-        BigDecimal accumulated_amount
-        String status "SAVING, FUNDED, COMPLETED"
-        LocalDate target_date
-    }
-
-    FIN_BUDGET {
-        UUID id PK
-        UUID category_id FK
-        String name
-        LocalDate start_date
-        LocalDate end_date
-        BigDecimal limit_amount
-    }
-
-    %% --- TELEMETRY &amp; COGNITIVE DOMAIN ---
-    TEL_SLEEP_RECORD {
-        UUID id PK
-        OffsetDateTime start_time
-        OffsetDateTime end_time
-        Integer duration_minutes
-        Integer sleep_score
-        JSONB stages
-        OffsetDateTime collected_at
-    }
-
-    TEL_ACTIVITY_STREAM {
-        UUID id PK
-        String app_name
-        String window_title
-        OffsetDateTime start_time
-        Integer duration_seconds
-        Boolean is_afk
-    }
-
-    BRAIN_IDEA {
-        UUID id PK
-        String title
-        String content
-        String status "RAW, REFINING, ARCHIVED, CONVERTED"
-        UUID converted_to_id FK "Maps to CoreExecutable"
-        OffsetDateTime created_at
-    }
-
-    CONTEXT_EVENT {
-        UUID id PK
-        String source "MANUAL, SYSTEM, INTEGRATION"
-        String provider
-        String event_type
-        String content
-        JSONB payload
-        OffsetDateTime occurred_at
-    }
-
-    %% --- LEARNING DOMAIN (Study Manager) ---
-    CORE_EXECUTABLE ||--o{ LRN_ASSESSMENT : "triggers evaluation"
-    LRN_TOPIC ||--o{ LRN_ASSESSMENT : "is evaluated in"
-
-    LRN_TOPIC {
-        UUID id PK
-        UUID user_id FK
-        String name
-        String description
-        String status "ACTIVE, MASTERED, ARCHIVED"
-        Integer current_score "0-100"
-        OffsetDateTime next_review_date
-    }
-
-    LRN_ASSESSMENT {
-        UUID id PK
-        UUID topic_id FK
-        UUID executable_id FK
-        Integer score_internals "0-100"
-        Integer score_architecture "0-100"
-        Integer score_production "0-100"
-        Integer score_seniority "0-100"
-        Integer score_general "0-100"
-        String identified_gaps
-        String recommended_prompt "PROMPT_A, PROMPT_B, PROMPT_C, PROMPT_D, PROMPT_E"
-        OffsetDateTime assessed_at
-    }
-
-    %% --- SYNC &amp; SYSTEM INFRASTRUCTURE ---
-    SYNC_MAPPINGS {
-        UUID id PK
-        UUID local_id "ID of CoreExecutable or FinTx"
-        String external_system "NOTION, APPLE"
-        String external_id "ID in Notion or EventKit"
-        String last_known_checksum "Hash for Loop Protection"
-        String sync_status
-        OffsetDateTime last_synced_at
-    }
-
-    OUTBOX_EVENTS {
-        UUID id PK
-        String aggregate_type
-        String aggregate_id
-        String event_type
-        JSONB payload
-        Boolean processed
-        String source_system "Loop Protection"
-        OffsetDateTime occurred_at
-    }
-
-    %% Relationships Mapping
-    CORE_EXECUTABLE ||--o{ SYNC_MAPPINGS : "syncs via"
-    FIN_TRANSACTION ||--o{ SYNC_MAPPINGS : "syncs via"
-    CORE_EXECUTABLE ||--o{ BRAIN_IDEA : "originates from"</code></pre>
-<h2 id="especificacion-de-dominios">Especificación de Dominios<a class="headerlink" href="#especificacion-de-dominios" title="Permanent link">¶</a></h2>
-<h3 id="1-gestion-de-usuarios-y-seguridad-mvp">1. Gestión de Usuarios y Seguridad (MVP)<a class="headerlink" href="#1-gestion-de-usuarios-y-seguridad-mvp" title="Permanent link">¶</a></h3>
-<p>Para el MVP, se introduce el schema de usuarios que rige la autenticación y el control de acceso:
-- <strong><code>SYS_USER</code></strong>: Define si un usuario es <code>ADMIN</code> (ej. el SysAdmin que despliega la infraestructura) o <code>USER</code>. Centraliza la propiedad de cuentas financieras, tareas y credenciales de integración.
-- <strong><code>SYNC_CREDENTIAL</code></strong>: Almacena de forma segura los tokens de acceso para Notion, Apple y n8n, permitiendo la comunicación saliente autenticada.</p>
-<h3 id="2-productividad-y-ejecucion-core">2. Productividad y Ejecución (Core)<a class="headerlink" href="#2-productividad-y-ejecucion-core" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong><code>CORE_EXECUTABLE</code></strong>: La unidad de ejecución base. Puede ser una tarea aislada, un hábito o una medida de predicción (<em>Lead Measure</em>). </li>
-<li><strong><code>CORE_EXECUTION_PROFILE</code></strong>: Desacopla las métricas cualitativas (impacto de Fibonacci, carga mental) del núcleo de la tarea, crucial para el motor de priorización de la IA.</li>
-<li><strong><code>CORE_CYCLE</code> &amp; <code>CORE_PROJECT</code></strong>: Permiten agrupar estratégicamente los ejecutables alineados a metodologías GTD o 4DX.</li>
-</ul>
-<h3 id="3-sincronizacion-y-prevencion-de-loops">3. Sincronización y Prevención de Loops<a class="headerlink" href="#3-sincronizacion-y-prevencion-de-loops" title="Permanent link">¶</a></h3>
-<p>La consistencia es mantenida por el patrón <code>SYNC_MAPPINGS</code>.
-- <strong><code>SYNC_MAPPINGS</code></strong>: Mapeo polimórfico mediante <code>local_id</code>. Almacena el <code>last_known_checksum</code> para validar que un cambio proveniente de Notion o Apple sea <strong>real</strong> y no producto de un evento reflejado (Loop Protection).
-- <strong><code>OUTBOX_EVENTS</code></strong>: Patrón de persistencia distribuida para inyectar con seguridad a Kafka (<em>Transactional Outbox</em>).</p>
-<h3 id="4-aprendizaje-continuo-learning-engine">4. Aprendizaje Continuo (Learning Engine)<a class="headerlink" href="#4-aprendizaje-continuo-learning-engine" title="Permanent link">¶</a></h3>
-<p>Este módulo se acopla a la productividad para fungir como un "Gestor de Estudio" impulsado por IA:
-- <strong><code>LRN_TOPIC</code></strong>: El tema a dominar. Rastrea su estado de maestría (<code>current_score</code>) y la fecha de su próximo repaso espaciado.
-- <strong><code>LRN_ASSESSMENT</code></strong>: Registro inmutable de cada sesión de estudio (evaluada por la IA). Guarda puntajes específicos (Internals, Architecture, Production) y detecta las brechas técnicas. Su resultado dicta qué Prompt (A, B, C, D o E) debe utilizarse en la siguiente iteración. Está fuertemente ligado a un <code>CORE_EXECUTABLE</code> para integrar el esfuerzo cognitivo con el <code>Agenda Planner</code>.</p>
-<h3 id="5-inteligencia-artificial-brain-telemetry">5. Inteligencia Artificial (Brain &amp; Telemetry)<a class="headerlink" href="#5-inteligencia-artificial-brain-telemetry" title="Permanent link">¶</a></h3>
-<p>Las tablas de este dominio actúan como el histórico <em>crudo</em> que consultan el RAG y los LLMs:
-- <strong><code>TEL_SLEEP_RECORD</code> / <code>TEL_ACTIVITY_STREAM</code></strong>: Sensores pasivos que afectan directamente los multiplicadores de la fórmula del <code>Agenda Planner</code>.
-- <strong><code>BRAIN_IDEA</code></strong>: Ingesta NLP cruda antes de ser refinada en un <code>CORE_EXECUTABLE</code>.</p>
+<h1 id="arquitectura-de-despliegue">Arquitectura de Despliegue<a class="headerlink" href="#arquitectura-de-despliegue" title="Permanent link">¶</a></h1>
+<p>Modelo híbrido distribuido (Cloud / On-Premise) compuesto por tres nodos interconectados mediante Tailscale.</p>
+<p>Para los diagramas visuales completos, consultar: <a href="../diagrams/">Diagramas (Eraser.io)</a>.</p>
+<hr>
+<h2 id="topologia-de-nodos">Topología de Nodos<a class="headerlink" href="#topologia-de-nodos" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                        RED TAILSCALE (VPN Mesh)                      │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│                                                                      │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  ┌─────────────────┐  ┌──────────────────────────────────────────┐  │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  │   Mac Mini M4   │  │         daniel-ubuntu (Servidor)         │  │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│  │   (On-Premise)  │  │                                          │  │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│  │                 │  │  ┌────────────────────────────────────┐  │  │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│  │  • Sentinel     │  │  │        HyperBrain (Docker/K8s)    │  │  │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  │  • eventAPI     │  │  │                                    │  │  │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│  │  • Ollama-MLX   │  │  │  • PostgreSQL    • OpenRouter     │  │  │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  │                 │  │  │  • RAG           • OpenClaw        │  │  │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│  └────────┬────────┘  │  │  • Backend       • SQS (LocalSt.) │  │  │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│           │           │  │  • Appsmith                        │  │  │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│  ┌────────┴────────┐  │  └────────────────────────────────────┘  │  │
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  │  Apple Device   │  │                                          │  │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│  │  (iOS/macOS)    │  └──────────────────────────────────────────┘  │
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│  └─────────────────┘                                                │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└──────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                              │
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>              ┌───────────────┴───────────────┐
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>              │      Control Plane (OCI)       │
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>              │  • Orquestación Kubernetes     │
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>              │  • Observabilidad (Grafana)    │
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>              └───────────────────────────────┘
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>              ┌───────────────────────────────┐
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>              │         iCloud (Apple)         │
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>              │  • Reminders  • Calendar       │
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>              └───────────────────────────────┘
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>              ┌───────────────────────────────┐
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>              │      Messaging (Webhook)       │
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>              │  • WhatsApp → Backend          │
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>              └───────────────────────────────┘
+</code></pre></div>
+<h2 id="descripcion-de-nodos">Descripción de Nodos<a class="headerlink" href="#descripcion-de-nodos" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nodo</th>
+<th style="text-align: left;">Ubicación</th>
+<th style="text-align: left;">Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>daniel-ubuntu</strong></td>
+<td style="text-align: left;">Servidor local</td>
+<td style="text-align: left;">Core de HyperBrain contenerizado: Backend Spring Boot, PostgreSQL, SQS (LocalStack o ElasticMQ), RAG, Appsmith, OpenRouter, OpenClaw.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mac Mini M4 Pro</strong></td>
+<td style="text-align: left;">On-premise</td>
+<td style="text-align: left;">Servicios nativos de Apple: <strong>Sentinel</strong> (demonio de monitoreo iCloud vía EventKit → SQS), <strong>eventAPI</strong> (escritura REST → iCloud) y <strong>Ollama-MLX</strong> (inferencia local de modelos de IA).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Control Plane (OCI)</strong></td>
+<td style="text-align: left;">Oracle Cloud Infrastructure</td>
+<td style="text-align: left;">Orquestación de Kubernetes y observabilidad integral mediante Grafana.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Apple Device</strong></td>
+<td style="text-align: left;">Dispositivo del usuario</td>
+<td style="text-align: left;">Punto de interacción del usuario. Accede a Appsmith (WebUI) y sincroniza bidireccionalmente con iCloud.</td>
+</tr>
+</tbody>
+</table>
 
 
 
