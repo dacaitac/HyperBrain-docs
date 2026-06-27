@@ -1,0 +1,3289 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación oficial del proyecto HyperBrain">
+      
+      
+        <meta name="author" content="dacaitac">
+      
+      
+        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/requirements/JAD/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../architecture/overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sesión JAD - HyperBrain Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sesion-jad-hyperbrain" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="HyperBrain Docs" class="md-header__button md-logo" aria-label="HyperBrain Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HyperBrain Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sesión JAD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="cyan" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="cyan" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dacaitac/HyperBrain-docs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    dacaitac/HyperBrain-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Requerimientos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Guía de Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/reference/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HyperBrain Docs" class="md-nav__button md-logo" aria-label="HyperBrain Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    HyperBrain Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dacaitac/HyperBrain-docs" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    dacaitac/HyperBrain-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requerimientos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requerimientos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesión JAD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sesión JAD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-proposito-del-documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Propósito del Documento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vision-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Visión del Producto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Visión del Producto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-declaracion-de-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Declaración de Visión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-pilares-teoricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Pilares Teóricos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-diferenciacion-competitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Diferenciación Competitiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-entrevista-estructurada-fase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Entrevista Estructurada — Fase 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Entrevista Estructurada — Fase 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-usuarios-y-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Usuarios y Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-funcionalidades-criticas-para-el-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Funcionalidades Críticas para el MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-gestion-del-conocimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Gestión del Conocimiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-indicadores-de-exito-kpis-del-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Indicadores de Éxito (KPIs) del MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-restricciones-y-preferencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Restricciones y Preferencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stack-tecnologico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stack Tecnológico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-arquitectura-de-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Arquitectura de Despliegue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Arquitectura de Despliegue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-topologia-de-nodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Topología de Nodos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-descripcion-de-nodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Descripción de Nodos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-arquitectura-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Arquitectura de Componentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Arquitectura de Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-capa-de-interfaces-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Capa de Interfaces (UI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-capa-de-gateway-y-mensajeria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Capa de Gateway y Mensajería
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-capa-core-logica-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Capa Core (Lógica de Negocio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-capa-de-inteligencia-artificial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Capa de Inteligencia Artificial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-motores-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Motores de Ejecución
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Motores de Ejecución">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-task-prioritizer-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Task Prioritizer Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-agenda-planner-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Agenda Planner Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-kafka-messaging-engine-eda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Kafka Messaging Engine (EDA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-learning-engine-gestor-de-estudio-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Learning Engine (Gestor de Estudio IA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-modelo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Modelo de Datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Modelo de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-schema-core-productividad-y-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. Schema core — Productividad y Ejecución
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-schema-brain-captura-cognitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Schema brain — Captura Cognitiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-schema-telemetry-biometria-y-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. Schema telemetry — Biometría y Actividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-schema-finance-gestion-patrimonial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. Schema finance — Gestión Patrimonial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-schema-learning-aprendizaje-continuo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5. Schema learning — Aprendizaje Continuo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-schema-sync-sincronizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6. Schema sync — Sincronización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#87-schema-common-infraestructura-transversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7. Schema common — Infraestructura Transversal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#88-relaciones-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.8. Relaciones Clave
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-integraciones-dia-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Integraciones Día 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ciclos-de-automatizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Ciclos de Automatización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-almacenamiento-en-la-nube-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Almacenamiento en la Nube (NAS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-2-consolidacion-casos-de-uso-modelo-de-dominio-e-historias-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 2: Consolidación — Casos de Uso, Modelo de Dominio e Historias de Usuario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 2: Consolidación — Casos de Uso, Modelo de Dominio e Historias de Usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#12-casos-de-uso-del-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Casos de Uso del MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Casos de Uso del MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cu-01-generacion-de-agenda-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-01: Generación de Agenda Dinámica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cu-02-sincronizacion-bidireccional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-02: Sincronización Bidireccional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cu-03-ingesta-pasiva-de-telemetria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-03: Ingesta Pasiva de Telemetría
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cu-04-consulta-contextual-inteligente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-04: Consulta Contextual Inteligente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-catalogo-de-eventos-y-logica-reactiva-event-driven-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Catálogo de Eventos y Lógica Reactiva (Event-Driven Logic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-modelo-de-dominio-consolidado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Modelo de Dominio Consolidado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-historias-de-usuario-backlog-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Historias de Usuario — Backlog MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Historias de Usuario — Backlog MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dominio-agenda-y-productividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Agenda y Productividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-aprendizaje-continuo-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Aprendizaje Continuo (Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-sincronizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Sincronización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-finanzas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Finanzas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-infraestructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Infraestructura
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-referencia-a-diagramas-de-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Referencia a Diagramas de Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arquitectura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visión General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de Datos (ERD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/learning-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor de Aprendizaje
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/system-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flujo del Sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas (Eraser.io)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía de Inicio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guía de Inicio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-proposito-del-documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Propósito del Documento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vision-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Visión del Producto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Visión del Producto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-declaracion-de-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Declaración de Visión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-pilares-teoricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Pilares Teóricos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-diferenciacion-competitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Diferenciación Competitiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-entrevista-estructurada-fase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Entrevista Estructurada — Fase 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Entrevista Estructurada — Fase 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-usuarios-y-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Usuarios y Roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-funcionalidades-criticas-para-el-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Funcionalidades Críticas para el MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-gestion-del-conocimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Gestión del Conocimiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-indicadores-de-exito-kpis-del-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Indicadores de Éxito (KPIs) del MVP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-restricciones-y-preferencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Restricciones y Preferencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-stack-tecnologico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Stack Tecnológico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-arquitectura-de-despliegue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Arquitectura de Despliegue
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Arquitectura de Despliegue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-topologia-de-nodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Topología de Nodos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-descripcion-de-nodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Descripción de Nodos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-arquitectura-de-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Arquitectura de Componentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Arquitectura de Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-capa-de-interfaces-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Capa de Interfaces (UI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-capa-de-gateway-y-mensajeria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Capa de Gateway y Mensajería
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-capa-core-logica-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Capa Core (Lógica de Negocio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-capa-de-inteligencia-artificial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Capa de Inteligencia Artificial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-motores-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Motores de Ejecución
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Motores de Ejecución">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-task-prioritizer-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Task Prioritizer Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-agenda-planner-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Agenda Planner Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-kafka-messaging-engine-eda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Kafka Messaging Engine (EDA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-learning-engine-gestor-de-estudio-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Learning Engine (Gestor de Estudio IA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-modelo-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Modelo de Datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Modelo de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-schema-core-productividad-y-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. Schema core — Productividad y Ejecución
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-schema-brain-captura-cognitiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Schema brain — Captura Cognitiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-schema-telemetry-biometria-y-actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. Schema telemetry — Biometría y Actividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-schema-finance-gestion-patrimonial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. Schema finance — Gestión Patrimonial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-schema-learning-aprendizaje-continuo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5. Schema learning — Aprendizaje Continuo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-schema-sync-sincronizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6. Schema sync — Sincronización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#87-schema-common-infraestructura-transversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7. Schema common — Infraestructura Transversal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#88-relaciones-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.8. Relaciones Clave
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-integraciones-dia-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Integraciones Día 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ciclos-de-automatizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Ciclos de Automatización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-almacenamiento-en-la-nube-nas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Almacenamiento en la Nube (NAS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-2-consolidacion-casos-de-uso-modelo-de-dominio-e-historias-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 2: Consolidación — Casos de Uso, Modelo de Dominio e Historias de Usuario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 2: Consolidación — Casos de Uso, Modelo de Dominio e Historias de Usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#12-casos-de-uso-del-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Casos de Uso del MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Casos de Uso del MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cu-01-generacion-de-agenda-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-01: Generación de Agenda Dinámica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cu-02-sincronizacion-bidireccional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-02: Sincronización Bidireccional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cu-03-ingesta-pasiva-de-telemetria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-03: Ingesta Pasiva de Telemetría
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cu-04-consulta-contextual-inteligente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CU-04: Consulta Contextual Inteligente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-catalogo-de-eventos-y-logica-reactiva-event-driven-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Catálogo de Eventos y Lógica Reactiva (Event-Driven Logic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-modelo-de-dominio-consolidado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Modelo de Dominio Consolidado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-historias-de-usuario-backlog-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Historias de Usuario — Backlog MVP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Historias de Usuario — Backlog MVP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dominio-agenda-y-productividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Agenda y Productividad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-aprendizaje-continuo-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Aprendizaje Continuo (Learning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-sincronizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Sincronización
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-finanzas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Finanzas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dominio-infraestructura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominio: Infraestructura
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-referencia-a-diagramas-de-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Referencia a Diagramas de Arquitectura
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="sesion-jad-hyperbrain">Sesión JAD — HyperBrain<a class="headerlink" href="#sesion-jad-hyperbrain" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>Versión:</strong> 1.0<br>
+<strong>Fecha:</strong> 2026-06-26<br>
+<strong>Facilitador:</strong> JAD Facilitator (AI-Assisted)<br>
+<strong>Stakeholder:</strong> Daniel Caita  </p>
+</blockquote>
+<hr>
+<h2 id="1-proposito-del-documento">1. Propósito del Documento<a class="headerlink" href="#1-proposito-del-documento" title="Permanent link">¶</a></h2>
+<p>Este documento registra los resultados de la sesión de Diseño Conjunto de Aplicaciones (JAD) para el proyecto <strong>HyperBrain</strong>. Su objetivo es consolidar la visión, los requerimientos funcionales y no funcionales, la arquitectura de referencia y el backlog inicial del MVP en un único artefacto de consulta permanente.</p>
+<p>Las fuentes primarias de esta sesión son:</p>
+<ul>
+<li>Las respuestas del stakeholder durante la entrevista estructurada (Fase 1).</li>
+<li>Los diagramas de arquitectura publicados en Eraser.io (<code>Deployment</code>, <code>Components</code>, <code>Core</code>, <code>Cloud Architecture</code>, <code>Modelo de Datos</code>).</li>
+<li>La documentación existente del ecosistema: <code>CORE-ARCHITECTURE.md</code>, <code>DATA-MODEL.md</code>, <code>HYPERBRAIN-PRODUCTION-ROADMAP.md</code>, <code>README.md</code>, <code>README-AI-SYSTEM.md</code>, <code>4DX.md</code>, <code>GTD.md</code>.</li>
+</ul>
+<hr>
+<h2 id="2-vision-del-producto">2. Visión del Producto<a class="headerlink" href="#2-vision-del-producto" title="Permanent link">¶</a></h2>
+<h3 id="21-declaracion-de-vision">2.1. Declaración de Visión<a class="headerlink" href="#21-declaracion-de-vision" title="Permanent link">¶</a></h3>
+<p>HyperBrain es un <strong>Ecosistema de Orquestación Productiva, Financiera y Cognitiva (Gestión de Estudio)</strong> que integra métricas de comportamiento continuo —transacciones financieras, telemetría de uso, progreso de aprendizaje y biometría— para alimentar un motor de inteligencia artificial. Su propósito es generar una agenda hiperoptimizada que maximice la eficiencia, proteja del colapso cognitivo (Throttling) y facilite la consecución de los objetivos del usuario mediante un Exoesqueleto Cognitivo.</p>
+<p>El sistema opera como un <strong>Exoesqueleto Cognitivo</strong>: no depende de la entrada manual de datos ni de la gestión activa por parte del usuario. Funciona como el motor analítico subyacente (backend) que automatiza la recolección pasiva de datos y la toma de decisiones, integrándose con plataformas tradicionales (Notion, Anytype, iOS) para que estas funcionen exclusivamente como su capa de presentación (frontend).</p>
+<h3 id="22-pilares-teoricos">2.2. Pilares Teóricos<a class="headerlink" href="#22-pilares-teoricos" title="Permanent link">¶</a></h3>
+<p>El diseño del sistema es la implementación técnica de tres marcos metodológicos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Marco</th>
+<th style="text-align: left;">Aplicación en HyperBrain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>4DX</strong> (The 4 Disciplines of Execution)</td>
+<td style="text-align: left;">Enfoque en MCIs (Metas Crucialmente Importantes) y Lead Measures. Los ciclos <code>CoreCycle</code> modelan las WIGs; los ejecutables <code>CoreExecutable</code> con <code>type: LEAD_MEASURE</code> representan las acciones predictivas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GTD</strong> (Getting Things Done)</td>
+<td style="text-align: left;">Captura absoluta mediante webhooks, clarificación por mapeo de impacto/energía, organización por el Agenda Planner Engine y reflexión estratégica a través de <code>CoreCycle</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Atomic Habits</strong></td>
+<td style="text-align: left;">Diseño de entorno donde la base de datos es la fuente de verdad y las interfaces nativas (iOS) son el punto de ejecución con fricción mínima.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-diferenciacion-competitiva">2.3. Diferenciación Competitiva<a class="headerlink" href="#23-diferenciacion-competitiva" title="Permanent link">¶</a></h3>
+<p>El problema principal de herramientas como Notion, Obsidian o Jira es que dependen exclusivamente de la entrada manual de datos y la gestión activa por parte del usuario. HyperBrain elimina esta fricción operando como el motor analítico subyacente: automatiza la recolección pasiva de datos y la toma de decisiones, pudiendo integrarse con estas plataformas para que funcionen únicamente como su interfaz visual.</p>
+<hr>
+<h2 id="3-entrevista-estructurada-fase-1">3. Entrevista Estructurada — Fase 1<a class="headerlink" href="#3-entrevista-estructurada-fase-1" title="Permanent link">¶</a></h2>
+<h3 id="31-usuarios-y-roles">3.1. Usuarios y Roles<a class="headerlink" href="#31-usuarios-y-roles" title="Permanent link">¶</a></h3>
+<p><strong>Perfil del usuario final:</strong> Personas enfocadas en su productividad — estudiantes, emprendedores, profesionales.</p>
+<p><strong>Roles del sistema:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rol</th>
+<th style="text-align: left;">Permisos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Usuario Estándar</strong></td>
+<td style="text-align: left;">Consumo del sistema a través de las interfaces de presentación (Notion, Anytype, iOS). Interacción con la IA para consultas y ajustes de agenda.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Administrador del Sistema (SysAdmin)</strong></td>
+<td style="text-align: left;">Superusuario con permisos exclusivos para despliegue y gestión de infraestructura técnica, monitoreo de rendimiento de base de datos, configuración de integraciones globales y mantenimiento del entorno de ejecución.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-funcionalidades-criticas-para-el-mvp">3.2. Funcionalidades Críticas para el MVP<a class="headerlink" href="#32-funcionalidades-criticas-para-el-mvp" title="Permanent link">¶</a></h3>
+<p>El stakeholder delimitó el alcance del MVP a tres pilares fundamentales:</p>
+<ol>
+<li><strong>Generación de Agenda Dinámica.</strong> Un sistema de resolución instantánea que estructure las tareas del día con fricción operativa casi nula por parte del usuario.</li>
+<li><strong>Sincronización de Ecosistema.</strong> Integración fluida que actúe como puente de datos bidireccional entre el núcleo de HyperBrain y el software de terceros utilizado cotidianamente.</li>
+<li><strong>Integración Profunda de Base de Datos con IA.</strong> Una arquitectura que permita al agente de inteligencia artificial extraer contexto preciso y actualizado directamente desde la base de datos relacional para personalizar su gestión.</li>
+<li><strong>Motor de Aprendizaje Inteligente (Study Manager).</strong> Un sistema de tutoría IA integrado nativamente al núcleo productivo, utilizando Spaced Repetition, Active Recall y Throttling cognitivo para orquestar el crecimiento técnico sin saturar la agenda.</li>
+</ol>
+<h3 id="33-gestion-del-conocimiento">3.3. Gestión del Conocimiento<a class="headerlink" href="#33-gestion-del-conocimiento" title="Permanent link">¶</a></h3>
+<p>La gestión del conocimiento utiliza una arquitectura de doble capa alimentada por eventos:</p>
+<ul>
+<li><strong>Capa Relacional (PostgreSQL):</strong> Centraliza y estructura el modelo de dominio principal — gestión financiera, productividad, usuarios.</li>
+<li><strong>Capa Vectorial (RAG):</strong> Ingiere el historial de interacciones en lenguaje natural (vía mensajería) y metadatos de eventos, otorgando a la inteligencia artificial la capacidad de recuperar contexto histórico y no estructurado bajo demanda.</li>
+</ul>
+<h3 id="34-indicadores-de-exito-kpis-del-mvp">3.4. Indicadores de Éxito (KPIs) del MVP<a class="headerlink" href="#34-indicadores-de-exito-kpis-del-mvp" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">KPI</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tasa de éxito en sincronización</strong></td>
+<td style="text-align: left;">Flujo de datos bidireccional con cero pérdida de información entre PostgreSQL, el ecosistema nativo de iOS (Recordatorios/Calendarios) y las interfaces de usuario (Notion o Anytype).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estabilidad operativa del core (Happy Path)</strong></td>
+<td style="text-align: left;">Ejecución continua y sin errores del flujo de trabajo principal a través de todos sus componentes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Retención en Alpha Cerrada</strong></td>
+<td style="text-align: left;">Adopción activa y constante por parte de un grupo de control inicial (entorno familiar cercano), previo a una expansión gradual.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-seguridad">3.5. Seguridad<a class="headerlink" href="#35-seguridad" title="Permanent link">¶</a></h3>
+<p>Para la fase inicial de despliegue (MVP), los requerimientos de seguridad se limitan a la implementación de un sistema de autenticación estándar para el control de acceso de los usuarios. Al tratarse de un entorno controlado, se posterga la integración de cifrado de extremo a extremo y el cumplimiento de normativas específicas de privacidad para fases posteriores de escalabilidad.</p>
+<h3 id="36-restricciones-y-preferencias">3.6. Restricciones y Preferencias<a class="headerlink" href="#36-restricciones-y-preferencias" title="Permanent link">¶</a></h3>
+<ul>
+<li>Uso preferente de software open source en todos los componentes del stack.</li>
+</ul>
+<hr>
+<h2 id="4-stack-tecnologico">4. Stack Tecnológico<a class="headerlink" href="#4-stack-tecnologico" title="Permanent link">¶</a></h2>
+<p>Definido por las respuestas del stakeholder y validado contra los diagramas de despliegue (<code>Deployment</code>) y componentes (<code>Components</code>).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dominio</th>
+<th style="text-align: left;">Tecnología</th>
+<th style="text-align: left;">Justificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Core y Backend</strong></td>
+<td style="text-align: left;">Spring Boot (Java)</td>
+<td style="text-align: left;">Solidez y escalabilidad para la lógica de negocio. Arquitectura modular DDD: <code>core</code>, <code>sync</code>, <code>finance</code>, <code>cognitive</code>, <code>prioritizer</code>, <code>planner</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Persistencia Relacional</strong></td>
+<td style="text-align: left;">PostgreSQL + Supabase</td>
+<td style="text-align: left;">PostgreSQL como SSoT (Single Source of Truth). Supabase para aceleración de acceso a datos y autenticación.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Persistencia Vectorial</strong></td>
+<td style="text-align: left;">RAG (Base de datos vectorial)</td>
+<td style="text-align: left;">Almacenamiento de embeddings de interacciones NLP y metadatos contextuales.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mensajería y Eventos</strong></td>
+<td style="text-align: left;">Apache Kafka</td>
+<td style="text-align: left;">Bus de eventos asíncrono para el patrón Event-Driven Architecture. Identificado en los diagramas <code>Deployment</code> y <code>Core</code> como eje de comunicación entre componentes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Contenerización</strong></td>
+<td style="text-align: left;">Docker</td>
+<td style="text-align: left;">Empaquetado de todos los servicios del ecosistema.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Orquestación</strong></td>
+<td style="text-align: left;">Kubernetes (K8s)</td>
+<td style="text-align: left;">Escalado y gestión de ciclo de vida de contenedores.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Automatización de Workflows</strong></td>
+<td style="text-align: left;">n8n</td>
+<td style="text-align: left;">Integración de flujos de trabajo de terceros (low-code).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Paneles Internos</strong></td>
+<td style="text-align: left;">Appsmith</td>
+<td style="text-align: left;">Desarrollo rápido de herramientas internas y paneles de control (low-code). Acceso directo a PostgreSQL según diagrama <code>Deployment</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IA — Enrutamiento LLM</strong></td>
+<td style="text-align: left;">OpenRouter</td>
+<td style="text-align: left;">Pasarela de enrutamiento unificada para múltiples proveedores de modelos de lenguaje.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IA — Agentes/Workflows</strong></td>
+<td style="text-align: left;">OpenClaw</td>
+<td style="text-align: left;">Orquestación de tareas de IA pesadas. Consume OpenRouter según diagrama <code>Deployment</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IA — Ejecución Local</strong></td>
+<td style="text-align: left;">Ollama-MLX</td>
+<td style="text-align: left;">Ejecución de modelos de IA en hardware local (Mac Mini M4 Pro). Conectado a OpenRouter según diagrama <code>Deployment</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ecosistema Apple</strong></td>
+<td style="text-align: left;">Swift (EventKit, Vapor)</td>
+<td style="text-align: left;"><strong>Sentinel:</strong> Demonio macOS para monitoreo de cambios nativos en iCloud (Reminders/Calendar). <strong>eventAPI:</strong> Servicio REST para escritura en EventKit.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Red Privada</strong></td>
+<td style="text-align: left;">Tailscale</td>
+<td style="text-align: left;">VPN mesh que interconecta todos los nodos de la infraestructura distribuida.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Discrepancia resuelta: SQS vs. Kafka</p>
+<p>Las respuestas de la Fase 1 mencionan Amazon SQS con DLQ. Sin embargo, los diagramas Eraser (<code>Deployment</code>, <code>Components</code>, <code>Core</code>) muestran consistentemente <strong>Apache Kafka</strong> como bus de mensajería. Se prioriza Kafka como la tecnología seleccionada, alineándose con los diagramas de arquitectura que representan el diseño más reciente. La tolerancia a fallos (equivalente a DLQ) se implementará mediante los mecanismos nativos de Kafka (dead letter topics, retry topics).</p>
+</div>
+<hr>
+<h2 id="5-arquitectura-de-despliegue">5. Arquitectura de Despliegue<a class="headerlink" href="#5-arquitectura-de-despliegue" title="Permanent link">¶</a></h2>
+<p>Modelo híbrido distribuido (Cloud / On-Premise) compuesto por tres nodos interconectados mediante Tailscale, según el diagrama <code>Deployment</code>.</p>
+<h3 id="51-topologia-de-nodos">5.1. Topología de Nodos<a class="headerlink" href="#51-topologia-de-nodos" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                        RED TAILSCALE (VPN Mesh)                      │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│                                                                      │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  ┌─────────────────┐  ┌──────────────────────────────────────────┐  │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  │   Mac Mini M4   │  │         daniel-ubuntu (Servidor)         │  │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│  │   (On-Premise)  │  │                                          │  │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│  │                 │  │  ┌────────────────────────────────────┐  │  │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│  │  • Sentinel     │  │  │        HyperBrain (Docker/K8s)    │  │  │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│  │  • eventAPI     │  │  │                                    │  │  │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│  │  • Ollama-MLX   │  │  │  • PostgreSQL    • OpenRouter     │  │  │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  │                 │  │  │  • RAG           • OpenClaw        │  │  │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│  └────────┬────────┘  │  │  • Backend       • Kafka           │  │  │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│           │           │  │  • Appsmith                        │  │  │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│  ┌────────┴────────┐  │  └────────────────────────────────────┘  │  │
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  │  Apple Device   │  │                                          │  │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│  │  (iOS/macOS)    │  └──────────────────────────────────────────┘  │
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│  └─────────────────┘                                                │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└──────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                              │
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>              ┌───────────────┴───────────────┐
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>              │      Control Plane (OCI)       │
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>              │  • Orquestación Kubernetes     │
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>              │  • Observabilidad (Grafana)    │
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>              └───────────────────────────────┘
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>              ┌───────────────────────────────┐
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>              │         iCloud (Apple)         │
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>              │  • Reminders  • Calendar       │
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>              └───────────────────────────────┘
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>              ┌───────────────────────────────┐
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>              │      Messaging (Webhook)       │
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>              │  • WhatsApp → Backend          │
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>              └───────────────────────────────┘
+</code></pre></div>
+<h3 id="52-descripcion-de-nodos">5.2. Descripción de Nodos<a class="headerlink" href="#52-descripcion-de-nodos" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nodo</th>
+<th style="text-align: left;">Ubicación</th>
+<th style="text-align: left;">Función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>daniel-ubuntu</strong></td>
+<td style="text-align: left;">Servidor local</td>
+<td style="text-align: left;">Aloja el core de HyperBrain contenerizado: Backend Spring Boot, PostgreSQL, Kafka, RAG, Appsmith, OpenRouter, OpenClaw.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mac Mini M4 Pro</strong></td>
+<td style="text-align: left;">On-premise</td>
+<td style="text-align: left;">Ejecuta los servicios nativos de Apple: <strong>Sentinel</strong> (demonio de monitoreo iCloud vía EventKit → Kafka), <strong>eventAPI</strong> (escritura REST → iCloud) y <strong>Ollama-MLX</strong> (inferencia local de modelos de IA).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Control Plane (OCI)</strong></td>
+<td style="text-align: left;">Oracle Cloud Infrastructure</td>
+<td style="text-align: left;">Orquestación de Kubernetes y observabilidad integral mediante Grafana.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Apple Device</strong></td>
+<td style="text-align: left;">Dispositivo del usuario</td>
+<td style="text-align: left;">Punto de interacción del usuario. Accede a Appsmith (WebUI) y sincroniza bidireccionalmente con iCloud.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-arquitectura-de-componentes">6. Arquitectura de Componentes<a class="headerlink" href="#6-arquitectura-de-componentes" title="Permanent link">¶</a></h2>
+<p>Derivada del diagrama <code>Components</code>. Define las capas del sistema y los protocolos de comunicación entre componentes.</p>
+<h3 id="61-capa-de-interfaces-ui">6.1. Capa de Interfaces (UI)<a class="headerlink" href="#61-capa-de-interfaces-ui" title="Permanent link">¶</a></h3>
+<p>Los siguientes sistemas actúan exclusivamente como frontends de HyperBrain:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Interfaz</th>
+<th style="text-align: left;">Protocolo de Comunicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Notion</strong></td>
+<td style="text-align: left;">REST bidireccional ↔ Gateway</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>iCloud</strong> (Reminders / Calendar)</td>
+<td style="text-align: left;">EventKit → Sentinel → Gateway (entrada); Gateway → eventAPI → EventKit (salida)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Appsmith</strong></td>
+<td style="text-align: left;">Acceso directo a PostgreSQL</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Messaging</strong> (WhatsApp)</td>
+<td style="text-align: left;">Webhook → Gateway</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-capa-de-gateway-y-mensajeria">6.2. Capa de Gateway y Mensajería<a class="headerlink" href="#62-capa-de-gateway-y-mensajeria" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Gateway (API Gateway):</strong> Punto de entrada único. Recibe peticiones REST de Notion, Sentinel y Messaging. Envía comandos REST a eventAPI. Se comunica bidireccionalmente con la cola SQS/Kafka en formato JSON.</li>
+<li><strong>SQS / Kafka:</strong> Bus de eventos central. Conecta Gateway, Core, iaService y OutboxWorker.</li>
+<li><strong>OutboxWorker:</strong> Consume la tabla <code>outbox_events</code> de PostgreSQL y publica los eventos correspondientes en la cola de mensajería (patrón Transactional Outbox).</li>
+</ul>
+<h3 id="63-capa-core-logica-de-negocio">6.3. Capa Core (Lógica de Negocio)<a class="headerlink" href="#63-capa-core-logica-de-negocio" title="Permanent link">¶</a></h3>
+<p>Extraída del diagrama <code>Core</code>. Implementa un patrón Event-Driven interno:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>SQS/Kafka ──→ Consumer ──→ EventRouter ──┬──→ IEventHandler ──→ CoreRepo ──→ PostgreSQL
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                                         │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                                         └──→ SyncServ ──→ CoreRepo ──→ PostgreSQL
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>                                                  │
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>                                                  └──→ Producer ──→ SQS/Kafka
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Componente</th>
+<th style="text-align: left;">Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Consumer</strong></td>
+<td style="text-align: left;">Deserializa eventos de la cola y los entrega al <code>EventRouter</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EventRouter</strong></td>
+<td style="text-align: left;">Despacha eventos al handler correspondiente (<code>IEventHandler</code>) o al servicio de sincronización (<code>SyncServ</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IEventHandler</strong></td>
+<td style="text-align: left;">Ejecuta la lógica de negocio del dominio y persiste a través de <code>CoreRepo</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SyncServ</strong></td>
+<td style="text-align: left;">Gestiona la propagación bidireccional de cambios. Persiste vía <code>CoreRepo</code> y publica eventos de respuesta a través de <code>Producer</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Producer</strong></td>
+<td style="text-align: left;">Serializa y publica eventos hacia la cola.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CoreRepo</strong></td>
+<td style="text-align: left;">Capa de acceso a datos contra PostgreSQL.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="64-capa-de-inteligencia-artificial">6.4. Capa de Inteligencia Artificial<a class="headerlink" href="#64-capa-de-inteligencia-artificial" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Componente</th>
+<th style="text-align: left;">Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>iaService</strong></td>
+<td style="text-align: left;">Servicio de IA que consume eventos de la cola (SQS/Kafka), consulta la capa vectorial (RAG) para contexto histórico y delega la ejecución a OpenClaw.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OpenClaw</strong></td>
+<td style="text-align: left;">Orquestador de workflows de IA. Enruta las solicitudes a OpenRouter.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OpenRouter</strong></td>
+<td style="text-align: left;">Pasarela de enrutamiento a múltiples LLMs, incluyendo Ollama-MLX para inferencia local.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="7-motores-de-ejecucion">7. Motores de Ejecución<a class="headerlink" href="#7-motores-de-ejecucion" title="Permanent link">¶</a></h2>
+<p>Definidos en <code>CORE-ARCHITECTURE.md</code>. Constituyen la lógica de negocio diferencial del sistema.</p>
+<h3 id="71-task-prioritizer-engine">7.1. Task Prioritizer Engine<a class="headerlink" href="#71-task-prioritizer-engine" title="Permanent link">¶</a></h3>
+<p>Calcula el <strong>Priority Score (P)</strong> para filtrar y ordenar las tareas del día:</p>
+<p>$$P = (Impacto \times 0.4) + (Urgencia \times 0.3) + (Effort_{inv} \times 0.1) + (Alineación \times 0.2)$$</p>
+<ul>
+<li><strong>Urgencia:</strong> Escala de 0 (fecha de creación) a 5 (fecha límite). Escala más allá de 5 si la tarea está vencida.</li>
+<li><strong>Impacto:</strong> Escala Fibonacci (1–8).</li>
+</ul>
+<h3 id="72-agenda-planner-engine">7.2. Agenda Planner Engine<a class="headerlink" href="#72-agenda-planner-engine" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Fase</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Fase 1 — Input</strong></td>
+<td style="text-align: left;">Lee disponibilidad horaria de iOS Calendar (excluyendo festivos).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fase 2 — Asignación</strong></td>
+<td style="text-align: left;">Clasifica tareas en bloques temporales (Mañana, Tarde, Noche) según el puntaje de <strong>Effort</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fase 3 — Output</strong></td>
+<td style="text-align: left;">Escribe la agenda generada en Notion y sincroniza con Apple Reminders.</td>
+</tr>
+</tbody>
+</table>
+<p>Fórmula de Effort:</p>
+<p>$$Effort = \left( \frac{(T \times 0.3) + (M \times 0.3) + (E \times 0.4) - 1}{2.3} \right) \times 5$$</p>
+<p>Donde: T = Tiempo estimado (1–4), M = Carga mental (1–3), E = Energía requerida (1–3).</p>
+<h3 id="73-kafka-messaging-engine-eda">7.3. Kafka Messaging Engine (EDA)<a class="headerlink" href="#73-kafka-messaging-engine-eda" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>SSoT:</strong> La base de datos PostgreSQL local es la única fuente de verdad.</li>
+<li><strong>Flujo de Propagación:</strong> Todo cambio en la BD (vía webhook o lógica interna) emite un evento a Kafka. El módulo de Sync consume estos eventos para replicar el estado en los satélites (Notion, Apple Reminders).</li>
+<li><strong>Loop Protection:</strong> Se utiliza un encabezado <code>source_system</code> en los eventos de Kafka para evitar rebotes — no propagar de vuelta al sistema que originó el cambio.</li>
+<li><strong>Checksum Validation:</strong> La tabla <code>sync_mappings</code> almacena el <code>last_known_checksum</code> de cada entidad sincronizada para detectar cambios reales y evitar propagaciones redundantes.</li>
+</ul>
+<h3 id="74-learning-engine-gestor-de-estudio-ia">7.4. Learning Engine (Gestor de Estudio IA)<a class="headerlink" href="#74-learning-engine-gestor-de-estudio-ia" title="Permanent link">¶</a></h3>
+<p>Orquesta el desarrollo de habilidades técnicas operando en dos capas:
+- <strong>Capa Estratégica (Throttling):</strong> Regula la carga cognitiva diaria. Prioriza el Mantenimiento (Active Recall) y bloquea la ingesta de nuevos temas si la carga de repaso supera el umbral crítico.
+- <strong>Capa Operativa:</strong> El <code>iaService</code> evalúa al usuario y enruta la interacción a través de Prompts Especializados: Diagnóstico, Priming, Estudio Quirúrgico, Zettelkasten o Backtrack (N-1), adaptándose al nivel de maestría detectado en cada sesión.</p>
+<hr>
+<h2 id="8-modelo-de-datos">8. Modelo de Datos<a class="headerlink" href="#8-modelo-de-datos" title="Permanent link">¶</a></h2>
+<p>Derivado del diagrama ERD (<code>varchar-5.eraserdiagram</code>) y validado contra <code>DATA-MODEL.md</code>. El esquema se organiza en seis schemas de PostgreSQL.</p>
+<h3 id="81-schema-core-productividad-y-ejecucion">8.1. Schema <code>core</code> — Productividad y Ejecución<a class="headerlink" href="#81-schema-core-productividad-y-ejecucion" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>core_executable</strong></td>
+<td style="text-align: left;">Unidad mínima de trabajo. Soporta tipos: <code>task</code>, <code>habit</code>, <code>lead_measure</code>, <code>activity</code>, <code>agenda</code>. Incluye atributos de priorización (<code>priority_score</code>, <code>urgence_score</code>, <code>effort_score</code>), coste estimado, métricas de esfuerzo (<code>energy_drain</code>, <code>mental_load</code>, <code>impact</code>) y referencia jerárquica (<code>parent_id</code>, <code>cycle_id</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>core_cycle</strong></td>
+<td style="text-align: left;">Períodos estratégicos (sprints de vida). Soporta jerarquía mediante <code>parent_id</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82-schema-brain-captura-cognitiva">8.2. Schema <code>brain</code> — Captura Cognitiva<a class="headerlink" href="#82-schema-brain-captura-cognitiva" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>brain_idea</strong></td>
+<td style="text-align: left;">Ideas capturadas en estado bruto. Ciclo de vida: <code>raw</code> → <code>refining</code> → <code>converted</code> (vinculada a un <code>core_executable</code> vía <code>converted_to_id</code>) o <code>archived</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>context_event</strong></td>
+<td style="text-align: left;">Registro de eventos contextuales con origen (<code>manual</code>, <code>system</code>, <code>integration</code>), proveedor, tipo, payload JSON y tags.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83-schema-telemetry-biometria-y-actividad">8.3. Schema <code>telemetry</code> — Biometría y Actividad<a class="headerlink" href="#83-schema-telemetry-biometria-y-actividad" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>tel_sleep_record</strong></td>
+<td style="text-align: left;">Registros de sueño con duración, puntaje y etapas (JSON).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>tel_activity_stream</strong></td>
+<td style="text-align: left;">Stream de actividad digital: aplicación, ventana activa, duración, estado AFK y payload crudo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="84-schema-finance-gestion-patrimonial">8.4. Schema <code>finance</code> — Gestión Patrimonial<a class="headerlink" href="#84-schema-finance-gestion-patrimonial" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>fin_account</strong></td>
+<td style="text-align: left;">Representación de cuentas físicas (activos y pasivos).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>fin_category</strong></td>
+<td style="text-align: left;">Taxonomía jerárquica de categorías de ingreso y gasto.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>fin_budget</strong></td>
+<td style="text-align: left;">Límites de gasto por categoría con rangos de fechas flexibles.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>fin_transaction</strong></td>
+<td style="text-align: left;">Libro mayor. Soporta partida doble (<code>origin_account_id</code>, <code>destination_account_id</code>). Vinculada a <code>core_executable</code> y <code>core_cycle</code> para integración cruzada productividad-finanzas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>fin_goal</strong></td>
+<td style="text-align: left;">Bolsillos lógicos (Sinking Funds). <code>target_amount</code> calculable dinámicamente. Vinculada a <code>core_executable</code> y <code>core_cycle</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="85-schema-learning-aprendizaje-continuo">8.5. Schema <code>learning</code> — Aprendizaje Continuo<a class="headerlink" href="#85-schema-learning-aprendizaje-continuo" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>lrn_topic</strong></td>
+<td style="text-align: left;">El tema o concepto técnico a dominar. Rastrea el nivel de maestría (<code>current_score</code>) y la fecha del próximo repaso espaciado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lrn_assessment</strong></td>
+<td style="text-align: left;">Registro inmutable de cada sesión de evaluación realizada por la IA. Guarda calificaciones detalladas (Internals, Architecture, Production) y recomienda el siguiente flujo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="86-schema-sync-sincronizacion">8.6. Schema <code>sync</code> — Sincronización<a class="headerlink" href="#86-schema-sync-sincronizacion" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>sync_mappings</strong></td>
+<td style="text-align: left;">Puente universal entre IDs locales e IDs externos (Notion, Apple). Almacena <code>last_known_checksum</code> para prevención de rebotes y <code>sync_status</code> para trazabilidad.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="87-schema-common-infraestructura-transversal">8.7. Schema <code>common</code> — Infraestructura Transversal<a class="headerlink" href="#87-schema-common-infraestructura-transversal" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>outbox_events</strong></td>
+<td style="text-align: left;">Implementación del patrón Transactional Outbox. Registra eventos pendientes de publicación a Kafka con <code>aggregate_type</code>, <code>aggregate_id</code>, <code>event_type</code>, <code>payload</code> y flag <code>processed</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="88-relaciones-clave">8.8. Relaciones Clave<a class="headerlink" href="#88-relaciones-clave" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>core_cycle</code> ↔ <code>core_executable</code>: Un ciclo organiza múltiples ejecutables.</li>
+<li><code>core_executable</code> → <code>core_executable</code>: Jerarquía de tareas (parent/child).</li>
+<li><code>core_executable</code> ↔ <code>fin_transaction</code>: Atribución de coste real a tareas.</li>
+<li><code>core_cycle</code> ↔ <code>fin_goal</code> / <code>fin_transaction</code>: Vinculación de presupuesto a nivel proyecto.</li>
+<li><code>core_executable</code> → <code>brain_idea</code>: Conversión de ideas en tareas ejecutables.</li>
+<li><code>core_executable</code> ↔ <code>lrn_assessment</code>: Las tareas programadas detonan evaluaciones cognitivas.</li>
+<li><code>sync_mappings</code> → cualquier entidad: Mapeo generalizado por <code>local_id</code>.</li>
+</ul>
+<hr>
+<h2 id="9-integraciones-dia-1">9. Integraciones Día 1<a class="headerlink" href="#9-integraciones-dia-1" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Sistema Externo</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Notion</strong></td>
+<td style="text-align: left;">Frontend bidireccional</td>
+<td style="text-align: left;">Bases de datos de Notion como interfaz de gestión. Sincronización REST a través del Gateway.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Anytype</strong></td>
+<td style="text-align: left;">Frontend bidireccional</td>
+<td style="text-align: left;">Alternativa a Notion como interfaz de gestión.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>iOS Reminders / Calendar</strong></td>
+<td style="text-align: left;">Frontend bidireccional</td>
+<td style="text-align: left;">Sentinel detecta cambios → Kafka → Backend. Backend → eventAPI → iCloud para escritura.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>WhatsApp</strong></td>
+<td style="text-align: left;">Entrada unidireccional</td>
+<td style="text-align: left;">Webhook hacia el Backend para captura de interacciones NLP e ingesta a la capa vectorial.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LLMs (tier gratuito)</strong></td>
+<td style="text-align: left;">Procesamiento cognitivo</td>
+<td style="text-align: left;">Consumo de endpoints de LLM en capa gratuita vía OpenRouter. Necesario para pruebas de concepto (PoC) sobre la interacción autónoma entre la IA y el esquema relacional.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="10-ciclos-de-automatizacion">10. Ciclos de Automatización<a class="headerlink" href="#10-ciclos-de-automatizacion" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Disparador</th>
+<th style="text-align: left;">Hora</th>
+<th style="text-align: left;">Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Shortcut Diario</strong></td>
+<td style="text-align: left;">05:30 AM</td>
+<td style="text-align: left;">Habit Generator → Prioritizer → Planner → Sync Engine.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Manual (Rutina)</strong></td>
+<td style="text-align: left;">Dinámico</td>
+<td style="text-align: left;">Replanificación basada en la hora actual.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cierre de Tarea</strong></td>
+<td style="text-align: left;">Instantáneo</td>
+<td style="text-align: left;">Sync de estado <code>DONE</code> hacia Notion e iOS.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evento externo</strong></td>
+<td style="text-align: left;">Instantáneo</td>
+<td style="text-align: left;">Cambio en Notion / iCloud / WhatsApp → Kafka → Core → Propagación.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="11-almacenamiento-en-la-nube-nas">11. Almacenamiento en la Nube (NAS)<a class="headerlink" href="#11-almacenamiento-en-la-nube-nas" title="Permanent link">¶</a></h2>
+<p>Derivado del diagrama <code>cloud-architecture-4</code>. Describe la estructura de almacenamiento centralizado en el NAS del ecosistema.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Área</th>
+<th style="text-align: left;">Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Files / Educación</strong></td>
+<td style="text-align: left;">Colegio, PosgradoTry, Cursos, UNAL (Google Drive), PapelesUN, Documentos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Files / Documents</strong></td>
+<td style="text-align: left;">Code, Finanzas, Papeles, Otros. Sincronizado bidireccionalmente con iCloud.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Multimedia</strong></td>
+<td style="text-align: left;">Fotos, GU, immich (servidor de fotos), Videos. iCloud sincroniza hacia immich.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Software</strong></td>
+<td style="text-align: left;">Reservado para distribución de software.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Backup</strong></td>
+<td style="text-align: left;">Respaldo bidireccional del NAS completo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mac Mini</strong></td>
+<td style="text-align: left;">Sincronización iCloud ↔ Google Drive (<code>i7.danielcc</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="fase-2-consolidacion-casos-de-uso-modelo-de-dominio-e-historias-de-usuario">Fase 2: Consolidación — Casos de Uso, Modelo de Dominio e Historias de Usuario<a class="headerlink" href="#fase-2-consolidacion-casos-de-uso-modelo-de-dominio-e-historias-de-usuario" title="Permanent link">¶</a></h2>
+<p>Los siguientes artefactos se derivan de las respuestas de la Fase 1 y de los diagramas de arquitectura. Se presentan para revisión y validación del stakeholder.</p>
+<h3 id="12-casos-de-uso-del-mvp">12. Casos de Uso del MVP<a class="headerlink" href="#12-casos-de-uso-del-mvp" title="Permanent link">¶</a></h3>
+<h4 id="cu-01-generacion-de-agenda-dinamica">CU-01: Generación de Agenda Dinámica<a class="headerlink" href="#cu-01-generacion-de-agenda-dinamica" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Actor principal:</strong> Sistema (automático) / Usuario (manual).</li>
+<li><strong>Disparador:</strong> Shortcut diario a las 05:30 AM o solicitud manual.</li>
+<li><strong>Precondiciones:</strong> Existen tareas con estado <code>todo</code> o <code>planned</code> en <code>core_executable</code>. La disponibilidad horaria está registrada en iOS Calendar.</li>
+<li><strong>Flujo principal:</strong><ol>
+<li>El Habit Generator crea las instancias diarias de hábitos y lead measures.</li>
+<li>El Prioritizer Engine calcula el <code>priority_score</code> de cada tarea pendiente.</li>
+<li>El Planner Engine lee la disponibilidad desde iOS Calendar, clasifica las tareas por bloques energéticos (Mañana, Tarde, Noche) según el <code>effort_score</code> y genera la agenda.</li>
+<li>El Sync Engine escribe la agenda resultante en Notion y Apple Reminders.</li>
+</ol>
+</li>
+<li><strong>Postcondiciones:</strong> Las tareas priorizadas aparecen como ejecutables con <code>type: agenda</code> en la base de datos y son visibles en todas las interfaces.</li>
+</ul>
+<h4 id="cu-02-sincronizacion-bidireccional">CU-02: Sincronización Bidireccional<a class="headerlink" href="#cu-02-sincronizacion-bidireccional" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Actor principal:</strong> Sistema (reactivo).</li>
+<li><strong>Disparador:</strong> Cambio detectado en cualquier satélite (Notion, iCloud, WhatsApp) o en la base de datos local.</li>
+<li><strong>Precondiciones:</strong> El mapping <code>sync_mappings</code> existe para la entidad afectada.</li>
+<li><strong>Flujo principal (Entrada — satélite → core):</strong><ol>
+<li>El componente receptor detecta el cambio: Sentinel (iCloud → Kafka), Gateway REST (Notion → SQS/Kafka), Webhook (WhatsApp → Gateway).</li>
+<li>El Consumer deserializa el evento y lo entrega al EventRouter.</li>
+<li>El EventRouter despacha al IEventHandler correspondiente.</li>
+<li>El IEventHandler valida el checksum contra <code>sync_mappings</code>. Si hay cambio real, persiste en PostgreSQL vía CoreRepo.</li>
+<li>El OutboxWorker detecta el nuevo registro en <code>outbox_events</code> y publica el evento de propagación en Kafka.</li>
+</ol>
+</li>
+<li><strong>Flujo principal (Salida — core → satélite):</strong><ol>
+<li>El SyncServ consume el evento de propagación.</li>
+<li>Verifica el <code>source_system</code> del evento para evitar rebotes (Loop Protection).</li>
+<li>Propaga el cambio al satélite correspondiente vía API REST (Notion) o eventAPI → EventKit (iCloud).</li>
+<li>Actualiza el <code>last_known_checksum</code> y <code>last_synced_at</code> en <code>sync_mappings</code>.</li>
+</ol>
+</li>
+<li><strong>Postcondiciones:</strong> El estado es consistente en PostgreSQL y en todos los satélites. Cero pérdida de información.</li>
+</ul>
+<h4 id="cu-03-ingesta-pasiva-de-telemetria">CU-03: Ingesta Pasiva de Telemetría<a class="headerlink" href="#cu-03-ingesta-pasiva-de-telemetria" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Actor principal:</strong> Sistema (pasivo).</li>
+<li><strong>Disparador:</strong> Nuevo registro de sueño, actividad digital o transacción financiera.</li>
+<li><strong>Precondiciones:</strong> Los sensores o integraciones de datos están configurados.</li>
+<li><strong>Flujo principal:</strong><ol>
+<li>Los datos de biometría (<code>tel_sleep_record</code>), actividad digital (<code>tel_activity_stream</code>) o transacciones financieras (<code>fin_transaction</code>) ingresan al sistema a través de webhooks, APIs o procesos batch.</li>
+<li>Se persisten en sus respectivos schemas.</li>
+<li>Se emite un evento a Kafka para notificar al iaService de la disponibilidad de datos frescos.</li>
+</ol>
+</li>
+<li><strong>Postcondiciones:</strong> Los datos están disponibles para el Prioritizer Engine y el iaService.</li>
+</ul>
+<h4 id="cu-04-consulta-contextual-inteligente">CU-04: Consulta Contextual Inteligente<a class="headerlink" href="#cu-04-consulta-contextual-inteligente" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Actor principal:</strong> iaService (autónomo).</li>
+<li><strong>Disparador:</strong> Solicitud de generación de agenda, respuesta a consulta del usuario vía WhatsApp, o decisión autónoma del agente.</li>
+<li><strong>Precondiciones:</strong> El iaService tiene acceso de lectura a PostgreSQL (capa relacional) y al RAG (capa vectorial).</li>
+<li><strong>Flujo principal:</strong><ol>
+<li>El iaService recibe un evento que requiere razonamiento.</li>
+<li>Consulta la capa relacional (PostgreSQL) para datos estructurados: tareas pendientes, saldos financieros, disponibilidad de agenda.</li>
+<li>Consulta la capa vectorial (RAG) para contexto histórico no estructurado: conversaciones previas, patrones de comportamiento.</li>
+<li>Enruta la solicitud a OpenClaw → OpenRouter → LLM para generar la respuesta o decisión.</li>
+<li>El resultado se persiste (si aplica) y se propaga a las interfaces correspondientes.</li>
+</ol>
+</li>
+<li><strong>Postcondiciones:</strong> La IA ha generado una respuesta o acción basada en contexto completo (relacional + vectorial).</li>
+</ul>
+<blockquote>
+<p>[!NOTE] Comentarios sobre Casos de Uso:
+(Espacio reservado para validación del stakeholder. Indicar si falta algún caso de uso vital para el MVP o si los propuestos requieren modificación.)</p>
+</blockquote>
+<hr>
+<h3 id="13-catalogo-de-eventos-y-logica-reactiva-event-driven-logic">13. Catálogo de Eventos y Lógica Reactiva (Event-Driven Logic)<a class="headerlink" href="#13-catalogo-de-eventos-y-logica-reactiva-event-driven-logic" title="Permanent link">¶</a></h3>
+<p>A medida que el ecosistema crezca, los nuevos casos de uso no se programarán como endpoints aislados, sino como lógica de dominio reactiva (IEventHandler) que escucha eventos específicos desde el bus de Kafka. Esta tabla sirve como el registro vivo de la relación entre Eventos y la Lógica Relacional que ejecutan.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Evento (Kafka Topic/Type)</th>
+<th style="text-align: left;">Origen</th>
+<th style="text-align: left;">Lógica que Dispara (IEventHandler)</th>
+<th style="text-align: left;">Impacto en Capa Relacional (PostgreSQL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>TaskCompletedEvent</code></td>
+<td style="text-align: left;">Sentinel (iOS) / Gateway (Notion)</td>
+<td style="text-align: left;">Valida cierre de tarea. Si es <code>LEAD_MEASURE</code>, recalcula el Lag Measure asociado.</td>
+<td style="text-align: left;">Actualiza estado en <code>core_executable</code>. Si tiene costo asociado, puede instanciar un <code>fin_transaction</code> preliminar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FinanceTransactionLoggedEvent</code></td>
+<td style="text-align: left;">Integración bancaria / Manual</td>
+<td style="text-align: left;">Cruza el evento financiero con los presupuestos activos.</td>
+<td style="text-align: left;">Inserta en <code>fin_transaction</code>. Actualiza <code>accumulated_amount</code> en <code>fin_goal</code> o saldo en <code>fin_account</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>TimeBlockFinishedEvent</code></td>
+<td style="text-align: left;">Core (Planner)</td>
+<td style="text-align: left;">Evalúa el tiempo real invertido vs el estimado en la sesión.</td>
+<td style="text-align: left;">Actualiza <code>actual_duration_minutes</code> en <code>core_time_block</code> y ajusta heurística de priorización para futuras tareas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DailyAgendaRequestedEvent</code></td>
+<td style="text-align: left;">Cronjob (05:30 AM) / Manual</td>
+<td style="text-align: left;">Invoca al <code>Prioritizer</code> y <code>Planner Engines</code>. Lee telemetría de la noche anterior.</td>
+<td style="text-align: left;">Crea o actualiza instancias de <code>core_executable</code> tipo <code>agenda</code> para el día en curso.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>BiometricSleepLoggedEvent</code></td>
+<td style="text-align: left;">Apple Health / Webhook</td>
+<td style="text-align: left;">Analiza la calidad del sueño (Sleep Score).</td>
+<td style="text-align: left;">Inserta en <code>tel_sleep_record</code>. Disminuye el tope de <code>energy_drain</code> disponible para el <code>Agenda Planner</code> del día.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IdeaCapturedEvent</code></td>
+<td style="text-align: left;">WhatsApp Webhook</td>
+<td style="text-align: left;">Llama al LLM para analizar la semántica y etiquetar.</td>
+<td style="text-align: left;">Inserta en <code>brain_idea</code> con estado <code>raw</code> o <code>refining</code>. Ingiere el contenido en la base vectorial (RAG).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LearningSessionTriggeredEvent</code></td>
+<td style="text-align: left;">Sentinel / Core</td>
+<td style="text-align: left;">Al completarse un <code>core_executable</code> de tipo estudio, el <code>iaService</code> evalúa el historial (<code>LRN_TOPIC</code>), decide el Prompt IA (A, B, C, D, E) e inicia la sesión interactiva.</td>
+<td style="text-align: left;">Inserta evaluación en <code>LRN_ASSESSMENT</code>, actualiza maestría en <code>LRN_TOPIC</code> y reprograma el próximo bloque de estudio (Spaced Repetition).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!NOTE] Comentarios sobre el Catálogo de Eventos:
+(Añade aquí nuevos eventos que se te vayan ocurriendo o lógica adicional que deba ejecutarse cuando ocurran los eventos listados.)</p>
+</blockquote>
+<hr>
+<h3 id="14-modelo-de-dominio-consolidado">14. Modelo de Dominio Consolidado<a class="headerlink" href="#14-modelo-de-dominio-consolidado" title="Permanent link">¶</a></h3>
+<p>Las entidades core del sistema, agrupadas por bounded context (DDD):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Bounded Context</th>
+<th style="text-align: left;">Entidades</th>
+<th style="text-align: left;">Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Core (Productividad)</strong></td>
+<td style="text-align: left;"><code>CoreExecutable</code>, <code>CoreCycle</code></td>
+<td style="text-align: left;">Modelar la ejecución de tareas, hábitos, actividades y su organización en ciclos estratégicos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Brain (Cognición)</strong></td>
+<td style="text-align: left;"><code>BrainIdea</code>, <code>ContextEvent</code></td>
+<td style="text-align: left;">Captura de ideas en bruto y registro de eventos contextuales para alimentar la IA.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Telemetry</strong></td>
+<td style="text-align: left;"><code>TelSleepRecord</code>, <code>TelActivityStream</code></td>
+<td style="text-align: left;">Recolección pasiva de datos biométricos y de actividad digital.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Finance</strong></td>
+<td style="text-align: left;"><code>FinAccount</code>, <code>FinTransaction</code>, <code>FinCategory</code>, <code>FinBudget</code>, <code>FinGoal</code></td>
+<td style="text-align: left;">Gestión patrimonial completa: cuentas, transacciones, presupuestos y metas de ahorro.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Learning</strong></td>
+<td style="text-align: left;"><code>LrnTopic</code>, <code>LrnAssessment</code></td>
+<td style="text-align: left;">Orquestación cognitiva: gestión de sesiones de estudio, throttling y evaluación IA.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sync</strong></td>
+<td style="text-align: left;"><code>SyncMappings</code></td>
+<td style="text-align: left;">Mapeo bidireccional de identidades entre el sistema local y los satélites externos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Common</strong></td>
+<td style="text-align: left;"><code>OutboxEvents</code></td>
+<td style="text-align: left;">Infraestructura transversal para el patrón Transactional Outbox.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!NOTE] Comentarios sobre Modelo de Dominio:
+(Espacio reservado para validación del stakeholder. Indicar si se requiere alguna otra entidad principal desde el Día 1.)</p>
+</blockquote>
+<hr>
+<h3 id="15-historias-de-usuario-backlog-mvp">15. Historias de Usuario — Backlog MVP<a class="headerlink" href="#15-historias-de-usuario-backlog-mvp" title="Permanent link">¶</a></h3>
+<h4 id="dominio-agenda-y-productividad">Dominio: Agenda y Productividad<a class="headerlink" href="#dominio-agenda-y-productividad" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>HU-01 — Generación Automática de Agenda:</strong> Como usuario, necesito que el sistema genere automáticamente mis prioridades diarias basadas en mi telemetría reciente y mis tareas pendientes, para reducir la fricción en la toma de decisiones matutina.</li>
+<li><strong>HU-02 — Replanificación Dinámica:</strong> Como usuario, necesito poder solicitar una replanificación de mi agenda en cualquier momento del día, para adaptarme a cambios imprevistos sin perder contexto.</li>
+<li><strong>HU-03 — Captura de Ideas:</strong> Como usuario, necesito que mis mensajes de WhatsApp se capturen automáticamente como ideas en bruto (<code>brain_idea</code>), para no perder ningún pensamiento que pueda convertirse en tarea.</li>
+</ul>
+<h4 id="dominio-aprendizaje-continuo-learning">Dominio: Aprendizaje Continuo (Learning)<a class="headerlink" href="#dominio-aprendizaje-continuo-learning" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>HU-04 — Evaluación Diagnóstica IA:</strong> Como usuario, necesito que al completar una tarea de estudio, el agente de IA evalúe objetivamente mis brechas con una sesión interactiva (Prompt A, B, C).</li>
+<li><strong>HU-05 — Prevención de Saturación (Throttling):</strong> Como usuario, necesito que el sistema me prohíba inyectar temas nuevos a mi agenda si mi deuda de repasos supera un umbral crítico.</li>
+</ul>
+<h4 id="dominio-sincronizacion">Dominio: Sincronización<a class="headerlink" href="#dominio-sincronizacion" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>HU-06 — Sync iOS → PostgreSQL:</strong> Como usuario, necesito que mis tareas creadas nativamente en iOS Reminders se reflejen instantáneamente en la base de datos central.</li>
+<li><strong>HU-07 — Sync PostgreSQL → Notion:</strong> Como usuario, necesito que los cambios en la base de datos se propaguen a mis bases de datos de Notion.</li>
+<li><strong>HU-08 — Tolerancia a Fallos en Sync:</strong> Como SysAdmin, necesito que los eventos fallidos sean retenidos en Kafka para su reprocesamiento.</li>
+</ul>
+<h4 id="dominio-finanzas">Dominio: Finanzas<a class="headerlink" href="#dominio-finanzas" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>HU-09 — Registro de Transacciones:</strong> Como usuario, necesito que mis transacciones se vinculen automáticamente a las tareas o ciclos para visibilidad del costo.</li>
+<li><strong>HU-10 — Control Presupuestario:</strong> Como usuario, necesito alertas cuando exceda el presupuesto de una categoría.</li>
+</ul>
+<h4 id="dominio-infraestructura">Dominio: Infraestructura<a class="headerlink" href="#dominio-infraestructura" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>HU-11 — Despliegue Híbrido:</strong> Como SysAdmin, necesito orquestar los contenedores en Ubuntu y delegar IA al Mac Mini.</li>
+<li><strong>HU-12 — Observabilidad:</strong> Como SysAdmin, necesito un tablero en Grafana para ver el estado de los servicios, latencias y métricas de Kafka.</li>
+</ul>
+<blockquote>
+<p>[!NOTE] Comentarios sobre Historias de Usuario:
+(Espacio reservado para validación del stakeholder. Indicar impresiones o historias que se consideren faltantes.)</p>
+</blockquote>
+<hr>
+<h2 id="16-referencia-a-diagramas-de-arquitectura">16. Referencia a Diagramas de Arquitectura<a class="headerlink" href="#16-referencia-a-diagramas-de-arquitectura" title="Permanent link">¶</a></h2>
+<p>Los diagramas fuente de este documento se encuentran en:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Diagrama</th>
+<th style="text-align: left;">Archivo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Deployment</td>
+<td style="text-align: left;"><code>Architecture-Deployment-1.eraserdiagram</code></td>
+<td style="text-align: left;">Topología de nodos, red Tailscale, servicios por máquina y conectividad iCloud.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Components</td>
+<td style="text-align: left;"><code>Architecture-Components-2.eraserdiagram</code></td>
+<td style="text-align: left;">Componentes del sistema, protocolos de comunicación y flujos de datos.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Core</td>
+<td style="text-align: left;"><code>Architecture-Core-3.eraserdiagram</code></td>
+<td style="text-align: left;">Arquitectura interna del módulo Core: Consumer, EventRouter, IEventHandler, SyncServ, Producer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cloud Architecture</td>
+<td style="text-align: left;"><code>Architecture-cloud-architecture-4.eraserdiagram</code></td>
+<td style="text-align: left;">Estructura del NAS, sincronización iCloud y política de backups.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Modelo de Datos (ERD)</td>
+<td style="text-align: left;"><code>Architecture-varchar-5.eraserdiagram</code></td>
+<td style="text-align: left;">Esquema completo de la base de datos: entidades, atributos, enums y relaciones.</td>
+</tr>
+</tbody>
+</table>
+<p>Editar en Eraser: <a href="https://app.eraser.io/workspace/qufdoKZ8oNs9GJjafWv0">https://app.eraser.io/workspace/qufdoKZ8oNs9GJjafWv0</a></p>
+<hr>
+<p><em>Una vez validados los Casos de Uso, el Modelo de Dominio y las Historias de Usuario, este documento queda cerrado como línea base de requerimientos para el desarrollo del MVP.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 HyperBrain
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/dacaitac/HyperBrain-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

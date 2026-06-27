@@ -9,13 +9,13 @@
         <meta name="author" content="dacaitac">
       
       
-        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/architecture/diagrams/">
+        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/architecture/learning-engine/">
       
       
-        <link rel="prev" href="../system-flow/">
+        <link rel="prev" href="../data-model/">
       
       
-        <link rel="next" href="../../getting-started/installation/">
+        <link rel="next" href="../system-flow/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>Diagramas (Eraser.io) - HyperBrain Docs</title>
+        <title>Motor de Aprendizaje - HyperBrain Docs</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#diagramas-de-arquitectura" class="md-skip">
+        <a href="#motor-de-aprendizaje-learning-engine" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Diagramas (Eraser.io)
+              Motor de Aprendizaje
             
           </span>
         </div>
@@ -607,10 +607,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../learning-engine/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor de Aprendizaje
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -626,6 +653,115 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-arquitectura-y-fases-del-proceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Arquitectura y Fases del Proceso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Arquitectura y Fases del Proceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capa-estrategica-gestion-de-carga-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capa Estratégica: Gestión de Carga (Throttling)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capa-operativa-ejecucion-tecnica-workflows-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capa Operativa: Ejecución Técnica (Workflows IA)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-integracion-con-hyperbrain-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Integración con HyperBrain Core
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Integración con HyperBrain Core">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integracion-relacional-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración Relacional (Base de Datos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracion-orientada-a-eventos-kafka" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración Orientada a Eventos (Kafka)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-matriz-de-casos-de-borde-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Matriz de Casos de Borde (State Machine)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -663,37 +799,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Diagramas (Eraser.io)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../diagrams/" class="md-nav__link">
         
   
   
@@ -709,81 +818,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Components
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cloud Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modelo-de-datos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modelo de Datos
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1029,54 +1063,88 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#deployment" class="md-nav__link">
+  <a href="#1-arquitectura-y-fases-del-proceso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment
+        1. Arquitectura y Fases del Proceso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Arquitectura y Fases del Proceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capa-estrategica-gestion-de-carga-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capa Estratégica: Gestión de Carga (Throttling)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#capa-operativa-ejecucion-tecnica-workflows-ia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Components
+        Capa Operativa: Ejecución Técnica (Workflows IA)
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#core" class="md-nav__link">
+  <a href="#2-integracion-con-hyperbrain-core" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core
+        2. Integración con HyperBrain Core
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Integración con HyperBrain Core">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integracion-relacional-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración Relacional (Base de Datos)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-architecture" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#integracion-orientada-a-eventos-kafka" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud Architecture
+        Integración Orientada a Eventos (Kafka)
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#modelo-de-datos" class="md-nav__link">
+  <a href="#3-matriz-de-casos-de-borde-state-machine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modelo de Datos
+        3. Matriz de Casos de Borde (State Machine)
       
     </span>
   </a>
@@ -1103,32 +1171,78 @@
   
 
 
-<h1 id="diagramas-de-arquitectura">Diagramas de Arquitectura<a class="headerlink" href="#diagramas-de-arquitectura" title="Permanent link">¶</a></h1>
-<p>Diagramas generados y mantenidos en <a href="https://app.eraser.io/workspace/qufdoKZ8oNs9GJjafWv0">Eraser.io</a>.
-Haz clic en cualquier imagen para verla en pantalla completa.</p>
-<blockquote>
-<p>✏️ <strong><a href="https://app.eraser.io/workspace/qufdoKZ8oNs9GJjafWv0">Abrir y editar en Eraser</a></strong></p>
-</blockquote>
-<hr>
-<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">¶</a></h2>
-<p>Infraestructura de despliegue: dispositivos, red Tailscale, servicios y conectividad con iCloud.</p>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../assets/diagrams/deployment.png" data-desc-position="bottom"><img alt="Deployment" src="../../assets/diagrams/deployment.png"></a></p>
-<hr>
-<h2 id="components">Components<a class="headerlink" href="#components" title="Permanent link">¶</a></h2>
-<p>Vista de componentes del sistema y sus interacciones.</p>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../assets/diagrams/components.png" data-desc-position="bottom"><img alt="Components" src="../../assets/diagrams/components.png"></a></p>
-<hr>
-<h2 id="core">Core<a class="headerlink" href="#core" title="Permanent link">¶</a></h2>
-<p>Núcleo del sistema: manejo de eventos, repositorios y workers.</p>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../assets/diagrams/core.png" data-desc-position="bottom"><img alt="Core" src="../../assets/diagrams/core.png"></a></p>
-<hr>
-<h2 id="cloud-architecture">Cloud Architecture<a class="headerlink" href="#cloud-architecture" title="Permanent link">¶</a></h2>
-<p>Arquitectura de almacenamiento en la nube, NAS y servicios conectados.</p>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../assets/diagrams/cloud-architecture.png" data-desc-position="bottom"><img alt="Cloud Architecture" src="../../assets/diagrams/cloud-architecture.png"></a></p>
-<hr>
-<h2 id="modelo-de-datos">Modelo de Datos<a class="headerlink" href="#modelo-de-datos" title="Permanent link">¶</a></h2>
-<p>Esquema de la base de datos: entidades, relaciones y tipos.</p>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../assets/diagrams/data-model.png" data-desc-position="bottom"><img alt="Modelo de Datos" src="../../assets/diagrams/data-model.png"></a></p>
+<h1 id="motor-de-aprendizaje-learning-engine">Motor de Aprendizaje (Learning Engine)<a class="headerlink" href="#motor-de-aprendizaje-learning-engine" title="Permanent link">¶</a></h1>
+<p>El <strong>Learning Engine</strong> es un submódulo de HyperBrain que actúa como un Gestor de Estudio impulsado por Inteligencia Artificial. Su objetivo es orquestar la ingesta, el mantenimiento y la evaluación del conocimiento técnico del usuario (específicamente orientado a Ingeniería de Software y Arquitectura).</p>
+<p>Al igual que el motor de finanzas, este módulo se integra nativamente con el núcleo de productividad (Core) de HyperBrain, inyectando tareas de estudio directamente en la agenda diaria y utilizando métricas telemetricas para evitar la saturación cognitiva.</p>
+<h2 id="1-arquitectura-y-fases-del-proceso">1. Arquitectura y Fases del Proceso<a class="headerlink" href="#1-arquitectura-y-fases-del-proceso" title="Permanent link">¶</a></h2>
+<p>El motor opera bajo un modelo de "Pipeline" que divide el aprendizaje en dos capas principales:</p>
+<h3 id="capa-estrategica-gestion-de-carga-throttling">Capa Estratégica: Gestión de Carga (Throttling)<a class="headerlink" href="#capa-estrategica-gestion-de-carga-throttling" title="Permanent link">¶</a></h3>
+<p>Actúa como un <strong>Gatekeeper</strong> para asegurar que el ancho de banda cognitivo no colapse:
+- <strong>Estado Mix (Mantenimiento + Ingesta):</strong> La prioridad absoluta es el repaso mediante <em>Active Recall</em> (Deuda). Si la carga de tareas de repaso es manejable (ej. $\le 15$), se permite la ingesta de nuevos temas (Expansión) hasta un tope (ej. 20 ítems diarios).
+- <strong>Tsunami Protection:</strong> Si los repasos pendientes superan un umbral crítico, el sistema bloquea automáticamente la entrada de nuevos temas.</p>
+<h3 id="capa-operativa-ejecucion-tecnica-workflows-ia">Capa Operativa: Ejecución Técnica (Workflows IA)<a class="headerlink" href="#capa-operativa-ejecucion-tecnica-workflows-ia" title="Permanent link">¶</a></h3>
+<p>El agente de Inteligencia Artificial (iaService) asume diferentes roles (Interviewer, Principal Engineer, Knowledge Architect) dependiendo de la madurez del usuario en el tema. Esto se orquesta mediante <strong>Prompts Dinámicos</strong>:</p>
+<ol>
+<li><strong>Prompt A (Active Recall / Diagnostic):</strong> Simula una entrevista Senior. Evalúa al usuario sin darle teoría inicial para medir la profundidad real del conocimiento (Internals, Arquitectura, Producción).</li>
+<li><strong>Prompt B (Priming):</strong> Si el diagnóstico arroja "Ignorancia Total", el agente cambia a rol educativo. Proporciona un tutorial arquitectónico sin código (para que el usuario lo escriba).</li>
+<li><strong>Prompt C (Surgical Study):</strong> Resuelve dudas muy puntuales ("brechas") detectadas en el diagnóstico, explicando el "Under the Hood" a nivel de memoria, red o SO.</li>
+<li><strong>Prompt D (Zettelkasten):</strong> Para consolidar el aprendizaje, el agente ayuda a crear una nota de alta densidad técnica (TL;DR, Internals, Anti-patrones, Vínculos en grafo).</li>
+<li><strong>Prompt E (Regression Protocol / Backtrack N-1):</strong> Si el usuario falla en un concepto avanzado por falta de bases, el agente "pausa" el tema actual y obliga a repasar el concepto fundamental (N-1) subyacente.</li>
+</ol>
+<h2 id="2-integracion-con-hyperbrain-core">2. Integración con HyperBrain Core<a class="headerlink" href="#2-integracion-con-hyperbrain-core" title="Permanent link">¶</a></h2>
+<p>El motor de aprendizaje no es una isla; es un "Plugin" nativo de la arquitectura HyperBrain.</p>
+<h3 id="integracion-relacional-base-de-datos">Integración Relacional (Base de Datos)<a class="headerlink" href="#integracion-relacional-base-de-datos" title="Permanent link">¶</a></h3>
+<ul>
+<li>Los temas de estudio residen en la tabla <code>LRN_TOPIC</code>.</li>
+<li>El resultado de cada sesión (los puntajes de la entrevista IA) se almacenan en <code>LRN_ASSESSMENT</code>.</li>
+<li>El sistema crea un <code>CORE_EXECUTABLE</code> (una tarea en Notion/Apple Reminders) para que el usuario sepa que le toca estudiar un tema. Cuando el usuario lo completa, se dispara el ciclo de evaluación.</li>
+</ul>
+<h3 id="integracion-orientada-a-eventos-kafka">Integración Orientada a Eventos (Kafka)<a class="headerlink" href="#integracion-orientada-a-eventos-kafka" title="Permanent link">¶</a></h3>
+<ol>
+<li>El usuario completa la tarea de estudio en Notion/iOS.</li>
+<li><code>TaskCompletedEvent</code> llega a Kafka.</li>
+<li>El <code>EventRouter</code> detecta que el <code>core_executable</code> es de tipo <code>LEARNING_SESSION</code>.</li>
+<li>Dispara el <code>iaService</code>, quien carga el historial del tema (<code>LRN_TOPIC</code>), decide qué Prompt usar basándose en la evaluación anterior (<code>LRN_ASSESSMENT</code>) y notifica al usuario (vía Appsmith o Messaging) para iniciar la sesión interactiva.</li>
+</ol>
+<h2 id="3-matriz-de-casos-de-borde-state-machine">3. Matriz de Casos de Borde (State Machine)<a class="headerlink" href="#3-matriz-de-casos-de-borde-state-machine" title="Permanent link">¶</a></h2>
+<p>La IA toma decisiones algorítmicas de enrutamiento del aprendizaje:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Caso</th>
+<th style="text-align: left;">Disparador (Score)</th>
+<th style="text-align: left;">Acción (Transición de Estado)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Ignorancia Total</strong></td>
+<td style="text-align: left;">Score &lt; 20</td>
+<td style="text-align: left;">Inyectar <strong>Prompt B (Priming)</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fragilidad</strong></td>
+<td style="text-align: left;">Score &lt; 70</td>
+<td style="text-align: left;">Inyectar <strong>Prompt C (Estudio Quirúrgico)</strong> enfocado en el feedback negativo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Estancamiento</strong></td>
+<td style="text-align: left;">3+ veces Frágil</td>
+<td style="text-align: left;">Abandonar teoría. Transición a <strong>Práctica Deliberada</strong> (Código real / Unit Tests fallidos).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Backtrack N-1</strong></td>
+<td style="text-align: left;">Red Flag de conceptos</td>
+<td style="text-align: left;">Inyectar <strong>Prompt E</strong> para reparar la base antes de continuar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Consolidado</strong></td>
+<td style="text-align: left;">Score &gt; 85</td>
+<td style="text-align: left;">Inyectar <strong>Prompt D (Zettelkasten)</strong> y posponer la próxima revisión usando Spaced Repetition.</td>
+</tr>
+</tbody>
+</table>
+<p>Esta integración convierte a HyperBrain no solo en un gestor de tiempo y dinero, sino en un tutor técnico personalizado de nivel Senior/Staff.</p>
 
 
 

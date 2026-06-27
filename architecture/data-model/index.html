@@ -9,29 +9,31 @@
         <meta name="author" content="dacaitac">
       
       
-        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/contributing/">
+        <link rel="canonical" href="https://dacaitac.github.io/HyperBrain-docs/architecture/data-model/">
       
       
-        <link rel="prev" href="../api/reference/">
+        <link rel="prev" href="../overview/">
       
+      
+        <link rel="next" href="../learning-engine/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Contribuir - HyperBrain Docs</title>
+        <title>Modelo de Datos (ERD) - HyperBrain Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,13 +52,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -76,7 +78,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -85,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contribuir" class="md-skip">
+        <a href="#modelo-de-datos-erd" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -99,7 +101,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href=".." title="HyperBrain Docs" class="md-header__button md-logo" aria-label="HyperBrain Docs" data-md-component="logo">
+    <a href="../.." title="HyperBrain Docs" class="md-header__button md-logo" aria-label="HyperBrain Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -119,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contribuir
+              Modelo de Datos (ERD)
             
           </span>
         </div>
@@ -132,7 +134,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="cyan" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden="">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
@@ -142,7 +144,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="cyan" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden="">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
@@ -232,7 +234,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -253,11 +255,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../getting-started/installation/" class="md-tabs__link">
+        <a href="../../requirements/JAD/" class="md-tabs__link">
           
   
   
-  Guía de Inicio
+  Requerimientos
 
         </a>
       </li>
@@ -269,11 +271,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../architecture/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
           
   
   
@@ -293,11 +297,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../api/reference/" class="md-tabs__link">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
           
   
   
-  API
+  Guía de Inicio
 
         </a>
       </li>
@@ -309,20 +313,19 @@
   
   
   
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
   
     
+    
+      <li class="md-tabs__item">
+        <a href="../../api/reference/" class="md-tabs__link">
+          
   
-  Contribuir
+  
+  API
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -348,7 +351,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="HyperBrain Docs" class="md-nav__button md-logo" aria-label="HyperBrain Docs" data-md-component="logo">
+    <a href="../.." title="HyperBrain Docs" class="md-nav__button md-logo" aria-label="HyperBrain Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -378,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -430,7 +433,7 @@
   <span class="md-ellipsis">
     
   
-    Guía de Inicio
+    Requerimientos
   
 
     
@@ -446,7 +449,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Guía de Inicio
+    Requerimientos
   
 
           </label>
@@ -459,42 +462,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/installation/" class="md-nav__link">
+      <a href="../../requirements/JAD/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Instalación
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../getting-started/configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuración
+    Sesión JAD
   
 
     
@@ -519,28 +494,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -558,7 +536,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -576,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -601,10 +579,196 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de Datos (ERD)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo de Datos (ERD)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-erd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrama ERD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificacion-de-dominios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Especificación de Dominios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificación de Dominios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-gestion-de-usuarios-y-seguridad-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Gestión de Usuarios y Seguridad (MVP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-productividad-y-ejecucion-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Productividad y Ejecución (Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-sincronizacion-y-prevencion-de-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sincronización y Prevención de Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-aprendizaje-continuo-learning-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Aprendizaje Continuo (Learning Engine)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-inteligencia-artificial-brain-telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Inteligencia Artificial (Brain &amp; Telemetry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../architecture/system-flow/" class="md-nav__link">
+      <a href="../learning-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor de Aprendizaje
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-flow/" class="md-nav__link">
         
   
   
@@ -632,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/diagrams/" class="md-nav__link">
+      <a href="../diagrams/" class="md-nav__link">
         
   
   
@@ -692,7 +856,7 @@
   <span class="md-ellipsis">
     
   
-    API
+    Guía de Inicio
   
 
     
@@ -708,7 +872,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    API
+    Guía de Inicio
   
 
           </label>
@@ -721,14 +885,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/reference/" class="md-nav__link">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Referencia
+    Instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración
   
 
     
@@ -753,26 +945,35 @@
       
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+    
+    
+    
       
       
         
       
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    Contribuir
+    API
   
 
     
@@ -780,17 +981,35 @@
   
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/reference/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Contribuir
+    Referencia
   
 
     
@@ -799,119 +1018,13 @@
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#como-contribuir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ¿Cómo contribuir?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="¿Cómo contribuir?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-fork-y-clone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Fork y Clone
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-crear-una-rama" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Crear una rama
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-realizar-cambios" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Realizar cambios
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-commit-y-push" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Commit y Push
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-pull-request" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Pull Request
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convenciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Convenciones
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#estructura-del-proyecto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Estructura del proyecto
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -944,22 +1057,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#como-contribuir" class="md-nav__link">
+  <a href="#diagrama-erd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ¿Cómo contribuir?
+        Diagrama ERD
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="¿Cómo contribuir?">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificacion-de-dominios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Especificación de Dominios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificación de Dominios">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-fork-y-clone" class="md-nav__link">
+  <a href="#1-gestion-de-usuarios-y-seguridad-mvp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Fork y Clone
+        1. Gestión de Usuarios y Seguridad (MVP)
       
     </span>
   </a>
@@ -967,10 +1091,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-crear-una-rama" class="md-nav__link">
+  <a href="#2-productividad-y-ejecucion-core" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Crear una rama
+        2. Productividad y Ejecución (Core)
       
     </span>
   </a>
@@ -978,10 +1102,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-realizar-cambios" class="md-nav__link">
+  <a href="#3-sincronizacion-y-prevencion-de-loops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Realizar cambios
+        3. Sincronización y Prevención de Loops
       
     </span>
   </a>
@@ -989,10 +1113,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-commit-y-push" class="md-nav__link">
+  <a href="#4-aprendizaje-continuo-learning-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Commit y Push
+        4. Aprendizaje Continuo (Learning Engine)
       
     </span>
   </a>
@@ -1000,10 +1124,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-pull-request" class="md-nav__link">
+  <a href="#5-inteligencia-artificial-brain-telemetry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Pull Request
+        5. Inteligencia Artificial (Brain &amp; Telemetry)
       
     </span>
   </a>
@@ -1012,28 +1136,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#convenciones" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Convenciones
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#estructura-del-proyecto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Estructura del proyecto
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1057,55 +1159,265 @@
   
 
 
-<h1 id="contribuir">Contribuir<a class="headerlink" href="#contribuir" title="Permanent link">¶</a></h1>
-<p>¡Gracias por tu interés en contribuir a HyperBrain! 🎉</p>
-<h2 id="como-contribuir">¿Cómo contribuir?<a class="headerlink" href="#como-contribuir" title="Permanent link">¶</a></h2>
-<h3 id="1-fork-y-clone">1. Fork y Clone<a class="headerlink" href="#1-fork-y-clone" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Fork el repositorio desde GitHub, luego:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;tu-usuario&gt;/HyperBrain-docs.git
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>HyperBrain-docs
-</code></pre></div>
-<h3 id="2-crear-una-rama">2. Crear una rama<a class="headerlink" href="#2-crear-una-rama" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/mi-mejora
-</code></pre></div>
-<h3 id="3-realizar-cambios">3. Realizar cambios<a class="headerlink" href="#3-realizar-cambios" title="Permanent link">¶</a></h3>
-<p>Haz tus cambios y asegúrate de que la documentación se construye correctamente:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdocs<span class="w"> </span>serve
-</code></pre></div>
-<h3 id="4-commit-y-push">4. Commit y Push<a class="headerlink" href="#4-commit-y-push" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"docs: descripción de los cambios"</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/mi-mejora
-</code></pre></div>
-<h3 id="5-pull-request">5. Pull Request<a class="headerlink" href="#5-pull-request" title="Permanent link">¶</a></h3>
-<p>Abre un Pull Request desde tu rama hacia <code>main</code>.</p>
-<h2 id="convenciones">Convenciones<a class="headerlink" href="#convenciones" title="Permanent link">¶</a></h2>
+<h1 id="modelo-de-datos-erd">Modelo de Datos (ERD)<a class="headerlink" href="#modelo-de-datos-erd" title="Permanent link">¶</a></h1>
+<p>Este documento define el modelo de datos relacional para el MVP de HyperBrain, complementado con la <strong>Gestión de Usuarios</strong> y los <strong>Mecanismos de Sincronización</strong> para sistemas externos.</p>
+<p>El siguiente diagrama Entidad-Relación (ERD) en Mermaid representa los seis dominios principales del ecosistema (Users, Core, Finance, Telemetry, Brain, Sync/Common) y cómo interactúan entre sí.</p>
+<h2 id="diagrama-erd">Diagrama ERD<a class="headerlink" href="#diagrama-erd" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>erDiagram
+    %% --- USERS DOMAIN (MVP &amp; Security) ---
+    SYS_USER ||--o{ CORE_EXECUTABLE : "owns"
+    SYS_USER ||--o{ FIN_ACCOUNT : "owns"
+    SYS_USER ||--o{ SYNC_CREDENTIAL : "configures"
+
+    SYS_USER {
+        UUID id PK
+        String email
+        String password_hash
+        String role "ADMIN, USER"
+        String status "ACTIVE, INACTIVE"
+        OffsetDateTime created_at
+    }
+
+    SYNC_CREDENTIAL {
+        UUID id PK
+        UUID user_id FK
+        String provider "NOTION, APPLE, N8N"
+        String access_token
+        String refresh_token
+        OffsetDateTime expires_at
+    }
+
+    %% --- CORE DOMAIN (Productivity &amp; Execution) ---
+    CORE_CYCLE ||--o{ CORE_EXECUTABLE : "organizes"
+    CORE_EXECUTABLE ||--o{ CORE_EXECUTABLE : "hierarchy (parentId)"
+    CORE_EXECUTABLE ||--|| CORE_EXECUTION_PROFILE : "profile"
+    CORE_EXECUTABLE ||--o{ CORE_TIME_BLOCK : "tracks"
+    CORE_PROJECT ||--o{ CORE_EXECUTABLE : "groups"
+    CORE_PROJECT ||--o{ FIN_GOAL : "links goal"
+
+    CORE_CYCLE {
+        UUID id PK
+        String name
+        LocalDate start_date
+        LocalDate end_date
+        String type "MCI, ROUTINE, PHASE"
+        String status "ACTIVE, COMPLETED"
+    }
+
+    CORE_EXECUTABLE {
+        UUID id PK
+        UUID user_id FK
+        UUID parent_id FK
+        UUID cycle_id FK
+        String name
+        String description
+        String type "TASK, HABIT, LEAD_MEASURE, ACTIVITY, AGENDA"
+        String status "TODO, IN_PROGRESS, DONE, FAILED, PLANNED"
+        Double priority_score
+        Double urgence_score
+        Double effort_score
+        BigDecimal estimated_cost
+        OffsetDateTime start_time
+        OffsetDateTime end_time
+        String source_calendar
+    }
+
+    CORE_EXECUTION_PROFILE {
+        UUID executable_id PK, FK
+        Integer estimated_minutes
+        Integer energy_drain "1-5"
+        Integer mental_load "1-5"
+        Integer impact "1-8 (Fibonacci)"
+    }
+
+    CORE_TIME_BLOCK {
+        UUID id PK
+        UUID executable_id FK
+        OffsetDateTime date_start
+        OffsetDateTime date_end
+        Integer actual_duration_minutes
+    }
+
+    CORE_PROJECT {
+        UUID id PK
+        String name
+        String status
+    }
+
+    %% --- FINANCE DOMAIN ---
+    FIN_ACCOUNT ||--o{ FIN_TRANSACTION : "origin/dest"
+    FIN_CATEGORY ||--o{ FIN_TRANSACTION : "classifies"
+    FIN_CATEGORY ||--o{ FIN_BUDGET : "restricts"
+    FIN_GOAL ||--o{ FIN_TRANSACTION : "contributes to"
+    CORE_EXECUTABLE ||--o{ FIN_TRANSACTION : "real cost"
+
+    FIN_ACCOUNT {
+        UUID id PK
+        UUID user_id FK
+        String name
+        String type "ASSET, LIABILITY"
+        BigDecimal balance
+        String currency
+    }
+
+    FIN_TRANSACTION {
+        UUID id PK
+        UUID executable_id FK
+        UUID origin_account_id FK
+        UUID destination_account_id FK
+        UUID category_id FK
+        UUID cycle_id FK
+        BigDecimal amount
+        String currency
+        String description
+        String type "INCOME, EXPENSE, TRANSFER"
+        String status "PLANNED, PENDING, COMPLETED"
+        OffsetDateTime occurred_at
+    }
+
+    FIN_CATEGORY {
+        UUID id PK
+        UUID parent_id FK
+        String name
+        String flow_type "INCOME, EXPENSE"
+    }
+
+    FIN_GOAL {
+        UUID id PK
+        UUID cycle_id FK
+        UUID executable_id FK
+        String name
+        BigDecimal target_amount
+        BigDecimal accumulated_amount
+        String status "SAVING, FUNDED, COMPLETED"
+        LocalDate target_date
+    }
+
+    FIN_BUDGET {
+        UUID id PK
+        UUID category_id FK
+        String name
+        LocalDate start_date
+        LocalDate end_date
+        BigDecimal limit_amount
+    }
+
+    %% --- TELEMETRY &amp; COGNITIVE DOMAIN ---
+    TEL_SLEEP_RECORD {
+        UUID id PK
+        OffsetDateTime start_time
+        OffsetDateTime end_time
+        Integer duration_minutes
+        Integer sleep_score
+        JSONB stages
+        OffsetDateTime collected_at
+    }
+
+    TEL_ACTIVITY_STREAM {
+        UUID id PK
+        String app_name
+        String window_title
+        OffsetDateTime start_time
+        Integer duration_seconds
+        Boolean is_afk
+    }
+
+    BRAIN_IDEA {
+        UUID id PK
+        String title
+        String content
+        String status "RAW, REFINING, ARCHIVED, CONVERTED"
+        UUID converted_to_id FK "Maps to CoreExecutable"
+        OffsetDateTime created_at
+    }
+
+    CONTEXT_EVENT {
+        UUID id PK
+        String source "MANUAL, SYSTEM, INTEGRATION"
+        String provider
+        String event_type
+        String content
+        JSONB payload
+        OffsetDateTime occurred_at
+    }
+
+    %% --- LEARNING DOMAIN (Study Manager) ---
+    CORE_EXECUTABLE ||--o{ LRN_ASSESSMENT : "triggers evaluation"
+    LRN_TOPIC ||--o{ LRN_ASSESSMENT : "is evaluated in"
+
+    LRN_TOPIC {
+        UUID id PK
+        UUID user_id FK
+        String name
+        String description
+        String status "ACTIVE, MASTERED, ARCHIVED"
+        Integer current_score "0-100"
+        OffsetDateTime next_review_date
+    }
+
+    LRN_ASSESSMENT {
+        UUID id PK
+        UUID topic_id FK
+        UUID executable_id FK
+        Integer score_internals "0-100"
+        Integer score_architecture "0-100"
+        Integer score_production "0-100"
+        Integer score_seniority "0-100"
+        Integer score_general "0-100"
+        String identified_gaps
+        String recommended_prompt "PROMPT_A, PROMPT_B, PROMPT_C, PROMPT_D, PROMPT_E"
+        OffsetDateTime assessed_at
+    }
+
+    %% --- SYNC &amp; SYSTEM INFRASTRUCTURE ---
+    SYNC_MAPPINGS {
+        UUID id PK
+        UUID local_id "ID of CoreExecutable or FinTx"
+        String external_system "NOTION, APPLE"
+        String external_id "ID in Notion or EventKit"
+        String last_known_checksum "Hash for Loop Protection"
+        String sync_status
+        OffsetDateTime last_synced_at
+    }
+
+    OUTBOX_EVENTS {
+        UUID id PK
+        String aggregate_type
+        String aggregate_id
+        String event_type
+        JSONB payload
+        Boolean processed
+        String source_system "Loop Protection"
+        OffsetDateTime occurred_at
+    }
+
+    %% Relationships Mapping
+    CORE_EXECUTABLE ||--o{ SYNC_MAPPINGS : "syncs via"
+    FIN_TRANSACTION ||--o{ SYNC_MAPPINGS : "syncs via"
+    CORE_EXECUTABLE ||--o{ BRAIN_IDEA : "originates from"</code></pre>
+<h2 id="especificacion-de-dominios">Especificación de Dominios<a class="headerlink" href="#especificacion-de-dominios" title="Permanent link">¶</a></h2>
+<h3 id="1-gestion-de-usuarios-y-seguridad-mvp">1. Gestión de Usuarios y Seguridad (MVP)<a class="headerlink" href="#1-gestion-de-usuarios-y-seguridad-mvp" title="Permanent link">¶</a></h3>
+<p>Para el MVP, se introduce el schema de usuarios que rige la autenticación y el control de acceso:
+- <strong><code>SYS_USER</code></strong>: Define si un usuario es <code>ADMIN</code> (ej. el SysAdmin que despliega la infraestructura) o <code>USER</code>. Centraliza la propiedad de cuentas financieras, tareas y credenciales de integración.
+- <strong><code>SYNC_CREDENTIAL</code></strong>: Almacena de forma segura los tokens de acceso para Notion, Apple y n8n, permitiendo la comunicación saliente autenticada.</p>
+<h3 id="2-productividad-y-ejecucion-core">2. Productividad y Ejecución (Core)<a class="headerlink" href="#2-productividad-y-ejecucion-core" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Commits</strong>: Usa <a href="https://www.conventionalcommits.org/es/">Conventional Commits</a></li>
-<li><strong>Idioma</strong>: La documentación se escribe en español</li>
-<li><strong>Formato</strong>: Usa Markdown siguiendo las convenciones de MkDocs Material</li>
+<li><strong><code>CORE_EXECUTABLE</code></strong>: La unidad de ejecución base. Puede ser una tarea aislada, un hábito o una medida de predicción (<em>Lead Measure</em>). </li>
+<li><strong><code>CORE_EXECUTION_PROFILE</code></strong>: Desacopla las métricas cualitativas (impacto de Fibonacci, carga mental) del núcleo de la tarea, crucial para el motor de priorización de la IA.</li>
+<li><strong><code>CORE_CYCLE</code> &amp; <code>CORE_PROJECT</code></strong>: Permiten agrupar estratégicamente los ejecutables alineados a metodologías GTD o 4DX.</li>
 </ul>
-<h2 id="estructura-del-proyecto">Estructura del proyecto<a class="headerlink" href="#estructura-del-proyecto" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>HyperBrain-docs/
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── docs/
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>│   ├── index.md
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│   ├── getting-started/
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>│   │   ├── installation.md
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>│   │   └── configuration.md
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>│   ├── architecture/
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>│   │   └── overview.md
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>│   ├── api/
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>│   │   └── reference.md
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>│   └── contributing.md
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>├── mkdocs.yml
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>└── .github/
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    └── workflows/
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        └── deploy.yml
-</code></pre></div>
-<div class="admonition question">
-<p class="admonition-title">¿Tienes dudas?</p>
-<p>Abre un <a href="https://github.com/dacaitac/HyperBrain-docs/issues">Issue</a> en el repositorio.</p>
-</div>
+<h3 id="3-sincronizacion-y-prevencion-de-loops">3. Sincronización y Prevención de Loops<a class="headerlink" href="#3-sincronizacion-y-prevencion-de-loops" title="Permanent link">¶</a></h3>
+<p>La consistencia es mantenida por el patrón <code>SYNC_MAPPINGS</code>.
+- <strong><code>SYNC_MAPPINGS</code></strong>: Mapeo polimórfico mediante <code>local_id</code>. Almacena el <code>last_known_checksum</code> para validar que un cambio proveniente de Notion o Apple sea <strong>real</strong> y no producto de un evento reflejado (Loop Protection).
+- <strong><code>OUTBOX_EVENTS</code></strong>: Patrón de persistencia distribuida para inyectar con seguridad a Kafka (<em>Transactional Outbox</em>).</p>
+<h3 id="4-aprendizaje-continuo-learning-engine">4. Aprendizaje Continuo (Learning Engine)<a class="headerlink" href="#4-aprendizaje-continuo-learning-engine" title="Permanent link">¶</a></h3>
+<p>Este módulo se acopla a la productividad para fungir como un "Gestor de Estudio" impulsado por IA:
+- <strong><code>LRN_TOPIC</code></strong>: El tema a dominar. Rastrea su estado de maestría (<code>current_score</code>) y la fecha de su próximo repaso espaciado.
+- <strong><code>LRN_ASSESSMENT</code></strong>: Registro inmutable de cada sesión de estudio (evaluada por la IA). Guarda puntajes específicos (Internals, Architecture, Production) y detecta las brechas técnicas. Su resultado dicta qué Prompt (A, B, C, D o E) debe utilizarse en la siguiente iteración. Está fuertemente ligado a un <code>CORE_EXECUTABLE</code> para integrar el esfuerzo cognitivo con el <code>Agenda Planner</code>.</p>
+<h3 id="5-inteligencia-artificial-brain-telemetry">5. Inteligencia Artificial (Brain &amp; Telemetry)<a class="headerlink" href="#5-inteligencia-artificial-brain-telemetry" title="Permanent link">¶</a></h3>
+<p>Las tablas de este dominio actúan como el histórico <em>crudo</em> que consultan el RAG y los LLMs:
+- <strong><code>TEL_SLEEP_RECORD</code> / <code>TEL_ACTIVITY_STREAM</code></strong>: Sensores pasivos que afectan directamente los multiplicadores de la fórmula del <code>Agenda Planner</code>.
+- <strong><code>BRAIN_IDEA</code></strong>: Ingesta NLP cruda antes de ser refinada en un <code>CORE_EXECUTABLE</code>.</p>
 
 
 
@@ -1181,10 +1493,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
