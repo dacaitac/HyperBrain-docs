@@ -23,7 +23,7 @@ Las fuentes primarias de esta sesión son:
 
 ### 2.1. Declaración de Visión
 
-HyperBrain es un **Ecosistema de Orquestación Productiva y Financiera** que integra métricas de comportamiento continuo —transacciones financieras, telemetría de uso y biometría— para alimentar un motor de inteligencia artificial. Su propósito es generar una agenda hiperoptimizada que maximice la eficiencia y facilite la consecución de los objetivos del usuario.
+HyperBrain es un **Ecosistema de Orquestación Productiva, Financiera y Cognitiva (Gestión de Estudio)** que integra métricas de comportamiento continuo —transacciones financieras, telemetría de uso, progreso de aprendizaje y biometría— para alimentar un motor de inteligencia artificial. Su propósito es generar una agenda hiperoptimizada que maximice la eficiencia, proteja del colapso cognitivo (Throttling) y facilite la consecución de los objetivos del usuario mediante un Exoesqueleto Cognitivo.
 
 El sistema opera como un **Exoesqueleto Cognitivo**: no depende de la entrada manual de datos ni de la gestión activa por parte del usuario. Funciona como el motor analítico subyacente (backend) que automatiza la recolección pasiva de datos y la toma de decisiones, integrándose con plataformas tradicionales (Notion, Anytype, iOS) para que estas funcionen exclusivamente como su capa de presentación (frontend).
 
@@ -63,6 +63,7 @@ El stakeholder delimitó el alcance del MVP a tres pilares fundamentales:
 1. **Generación de Agenda Dinámica.** Un sistema de resolución instantánea que estructure las tareas del día con fricción operativa casi nula por parte del usuario.
 2. **Sincronización de Ecosistema.** Integración fluida que actúe como puente de datos bidireccional entre el núcleo de HyperBrain y el software de terceros utilizado cotidianamente.
 3. **Integración Profunda de Base de Datos con IA.** Una arquitectura que permita al agente de inteligencia artificial extraer contexto preciso y actualizado directamente desde la base de datos relacional para personalizar su gestión.
+4. **Motor de Aprendizaje Inteligente (Study Manager).** Un sistema de tutoría IA integrado nativamente al núcleo productivo, utilizando Spaced Repetition, Active Recall y Throttling cognitivo para orquestar el crecimiento técnico sin saturar la agenda.
 
 ### 3.3. Gestión del Conocimiento
 
@@ -254,6 +255,12 @@ Donde: T = Tiempo estimado (1–4), M = Carga mental (1–3), E = Energía reque
 - **Loop Protection:** Se utiliza un encabezado `source_system` en los eventos de Kafka para evitar rebotes — no propagar de vuelta al sistema que originó el cambio.
 - **Checksum Validation:** La tabla `sync_mappings` almacena el `last_known_checksum` de cada entidad sincronizada para detectar cambios reales y evitar propagaciones redundantes.
 
+### 7.4. Learning Engine (Gestor de Estudio IA)
+
+Orquesta el desarrollo de habilidades técnicas operando en dos capas:
+- **Capa Estratégica (Throttling):** Regula la carga cognitiva diaria. Prioriza el Mantenimiento (Active Recall) y bloquea la ingesta de nuevos temas si la carga de repaso supera el umbral crítico.
+- **Capa Operativa:** El `iaService` evalúa al usuario y enruta la interacción a través de Prompts Especializados: Diagnóstico, Priming, Estudio Quirúrgico, Zettelkasten o Backtrack (N-1), adaptándose al nivel de maestría detectado en cada sesión.
+
 ---
 
 ## 8. Modelo de Datos
@@ -291,25 +298,33 @@ Derivado del diagrama ERD (`varchar-5.eraserdiagram`) y validado contra `DATA-MO
 | **fin_transaction** | Libro mayor. Soporta partida doble (`origin_account_id`, `destination_account_id`). Vinculada a `core_executable` y `core_cycle` para integración cruzada productividad-finanzas. |
 | **fin_goal** | Bolsillos lógicos (Sinking Funds). `target_amount` calculable dinámicamente. Vinculada a `core_executable` y `core_cycle`. |
 
-### 8.5. Schema `sync` — Sincronización
+### 8.5. Schema `learning` — Aprendizaje Continuo
+
+| Entidad | Descripción |
+| :--- | :--- |
+| **lrn_topic** | El tema o concepto técnico a dominar. Rastrea el nivel de maestría (`current_score`) y la fecha del próximo repaso espaciado. |
+| **lrn_assessment** | Registro inmutable de cada sesión de evaluación realizada por la IA. Guarda calificaciones detalladas (Internals, Architecture, Production) y recomienda el siguiente flujo. |
+
+### 8.6. Schema `sync` — Sincronización
 
 | Entidad | Descripción |
 | :--- | :--- |
 | **sync_mappings** | Puente universal entre IDs locales e IDs externos (Notion, Apple). Almacena `last_known_checksum` para prevención de rebotes y `sync_status` para trazabilidad. |
 
-### 8.6. Schema `common` — Infraestructura Transversal
+### 8.7. Schema `common` — Infraestructura Transversal
 
 | Entidad | Descripción |
 | :--- | :--- |
 | **outbox_events** | Implementación del patrón Transactional Outbox. Registra eventos pendientes de publicación a Kafka con `aggregate_type`, `aggregate_id`, `event_type`, `payload` y flag `processed`. |
 
-### 8.7. Relaciones Clave
+### 8.8. Relaciones Clave
 
 - `core_cycle` ↔ `core_executable`: Un ciclo organiza múltiples ejecutables.
 - `core_executable` → `core_executable`: Jerarquía de tareas (parent/child).
 - `core_executable` ↔ `fin_transaction`: Atribución de coste real a tareas.
 - `core_cycle` ↔ `fin_goal` / `fin_transaction`: Vinculación de presupuesto a nivel proyecto.
 - `core_executable` → `brain_idea`: Conversión de ideas en tareas ejecutables.
+- `core_executable` ↔ `lrn_assessment`: Las tareas programadas detonan evaluaciones cognitivas.
 - `sync_mappings` → cualquier entidad: Mapeo generalizado por `local_id`.
 
 ---
@@ -446,6 +461,7 @@ Las entidades core del sistema, agrupadas por bounded context (DDD):
 | **Brain (Cognición)** | `BrainIdea`, `ContextEvent` | Captura de ideas en bruto y registro de eventos contextuales para alimentar la IA. |
 | **Telemetry** | `TelSleepRecord`, `TelActivityStream` | Recolección pasiva de datos biométricos y de actividad digital. |
 | **Finance** | `FinAccount`, `FinTransaction`, `FinCategory`, `FinBudget`, `FinGoal` | Gestión patrimonial completa: cuentas, transacciones, presupuestos y metas de ahorro. |
+| **Learning** | `LrnTopic`, `LrnAssessment` | Orquestación cognitiva: gestión de sesiones de estudio, throttling y evaluación IA. |
 | **Sync** | `SyncMappings` | Mapeo bidireccional de identidades entre el sistema local y los satélites externos. |
 | **Common** | `OutboxEvents` | Infraestructura transversal para el patrón Transactional Outbox. |
 
@@ -462,21 +478,26 @@ Las entidades core del sistema, agrupadas por bounded context (DDD):
 - **HU-02 — Replanificación Dinámica:** Como usuario, necesito poder solicitar una replanificación de mi agenda en cualquier momento del día, para adaptarme a cambios imprevistos sin perder contexto.
 - **HU-03 — Captura de Ideas:** Como usuario, necesito que mis mensajes de WhatsApp se capturen automáticamente como ideas en bruto (`brain_idea`), para no perder ningún pensamiento que pueda convertirse en tarea.
 
+#### Dominio: Aprendizaje Continuo (Learning)
+
+- **HU-04 — Evaluación Diagnóstica IA:** Como usuario, necesito que al completar una tarea de estudio, el agente de IA evalúe objetivamente mis brechas con una sesión interactiva (Prompt A, B, C).
+- **HU-05 — Prevención de Saturación (Throttling):** Como usuario, necesito que el sistema me prohíba inyectar temas nuevos a mi agenda si mi deuda de repasos supera un umbral crítico.
+
 #### Dominio: Sincronización
 
-- **HU-04 — Sync iOS → PostgreSQL:** Como usuario, necesito que mis tareas creadas nativamente en iOS Reminders se reflejen instantáneamente en la base de datos central, para centralizar mi información.
-- **HU-05 — Sync PostgreSQL → Notion:** Como usuario, necesito que los cambios realizados por el motor de IA en la base de datos se propaguen automáticamente a mis bases de datos de Notion, para visualizar el estado actualizado.
-- **HU-06 — Tolerancia a Fallos en Sync:** Como SysAdmin, necesito que los eventos de sincronización que fallen sean retenidos en un mecanismo de retry (dead letter topic en Kafka), para poder reprocesarlos sin perder información.
+- **HU-06 — Sync iOS → PostgreSQL:** Como usuario, necesito que mis tareas creadas nativamente en iOS Reminders se reflejen instantáneamente en la base de datos central.
+- **HU-07 — Sync PostgreSQL → Notion:** Como usuario, necesito que los cambios en la base de datos se propaguen a mis bases de datos de Notion.
+- **HU-08 — Tolerancia a Fallos en Sync:** Como SysAdmin, necesito que los eventos fallidos sean retenidos en Kafka para su reprocesamiento.
 
 #### Dominio: Finanzas
 
-- **HU-07 — Registro de Transacciones:** Como usuario, necesito que mis transacciones financieras se vinculen automáticamente a las tareas o ciclos que las originaron, para tener visibilidad del coste real de cada proyecto.
-- **HU-08 — Control Presupuestario:** Como usuario, necesito que el sistema me alerte cuando un gasto exceda el presupuesto asignado a una categoría, para evitar desviaciones.
+- **HU-09 — Registro de Transacciones:** Como usuario, necesito que mis transacciones se vinculen automáticamente a las tareas o ciclos para visibilidad del costo.
+- **HU-10 — Control Presupuestario:** Como usuario, necesito alertas cuando exceda el presupuesto de una categoría.
 
 #### Dominio: Infraestructura
 
-- **HU-09 — Despliegue Híbrido:** Como SysAdmin, necesito que el Control Plane en OCI supervise los servicios contenerizados en el servidor Ubuntu local y delegue la carga de IA al Mac Mini M4, para maximizar el uso del hardware on-premise.
-- **HU-10 — Observabilidad:** Como SysAdmin, necesito un tablero centralizado en Grafana que muestre el estado de todos los servicios, la latencia de sincronización y las métricas de Kafka, para detectar degradaciones antes de que impacten al usuario.
+- **HU-11 — Despliegue Híbrido:** Como SysAdmin, necesito orquestar los contenedores en Ubuntu y delegar IA al Mac Mini.
+- **HU-12 — Observabilidad:** Como SysAdmin, necesito un tablero en Grafana para ver el estado de los servicios, latencias y métricas de Kafka.
 
 > [!NOTE] Comentarios sobre Historias de Usuario:
 > (Espacio reservado para validación del stakeholder. Indicar impresiones o historias que se consideren faltantes.)
