@@ -307,8 +307,8 @@ Derivado del diagrama ERD (`varchar-5.eraserdiagram`) y validado contra `DATA-MO
 
 ### 8.6. Schema `sync` — Sincronización
 
-| Entidad | Descripción |
-| :--- | :--- |
+| Entidad           | Descripción                                                                                                                                                     |
+| :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **sync_mappings** | Puente universal entre IDs locales e IDs externos (Notion, Apple). Almacena `last_known_checksum` para prevención de rebotes y `sync_status` para trazabilidad. |
 
 ### 8.7. Schema `common` — Infraestructura Transversal
