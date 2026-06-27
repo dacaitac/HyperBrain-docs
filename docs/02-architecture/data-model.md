@@ -70,7 +70,7 @@ erDiagram
     }
 
     CORE_EXECUTION_PROFILE {
-        UUID executable_id PK_FK
+        UUID executable_id PK, FK
         Integer estimated_minutes
         Integer energy_drain "1-5"
         Integer mental_load "1-5"
