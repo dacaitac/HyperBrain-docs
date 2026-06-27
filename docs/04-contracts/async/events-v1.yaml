@@ -1,0 +1,93 @@
+asyncapi: 2.6.0
+info:
+  title: HyperBrain Event Bus
+  version: 1.0.0
+  description: Contratos de eventos asíncronos para el motor de mensajería (SQS) de HyperBrain.
+servers:
+  local_sqs:
+    url: http://localhost:4566/000000000000/hyperbrain-events
+    protocol: sqs
+    description: Servidor SQS Local (LocalStack/ElasticMQ)
+channels:
+  hyperbrain-events:
+    publish:
+      message:
+        oneOf:
+          - $ref: '#/components/messages/TaskCompletedEvent'
+          - $ref: '#/components/messages/FinanceTransactionLoggedEvent'
+          - $ref: '#/components/messages/LearningSessionTriggeredEvent'
+    subscribe:
+      message:
+        oneOf:
+          - $ref: '#/components/messages/TaskCompletedEvent'
+          - $ref: '#/components/messages/FinanceTransactionLoggedEvent'
+          - $ref: '#/components/messages/LearningSessionTriggeredEvent'
+components:
+  messages:
+    TaskCompletedEvent:
+      name: TaskCompletedEvent
+      title: Tarea Completada
+      summary: Emitido cuando un satélite (ej. iOS/Notion) marca una tarea como completada.
+      payload:
+        $ref: '#/components/schemas/TaskCompletedPayload'
+    FinanceTransactionLoggedEvent:
+      name: FinanceTransactionLoggedEvent
+      title: Transacción Registrada
+      summary: Emitido cuando se registra un movimiento financiero.
+      payload:
+        $ref: '#/components/schemas/FinanceTransactionPayload'
+    LearningSessionTriggeredEvent:
+      name: LearningSessionTriggeredEvent
+      title: Sesión de Aprendizaje Disparada
+      summary: Emitido para iniciar una evaluación IA sobre un tema de estudio.
+      payload:
+        $ref: '#/components/schemas/LearningSessionPayload'
+  schemas:
+    BaseEventPayload:
+      type: object
+      required:
+        - aggregate_type
+        - aggregate_id
+        - source_system
+        - occurred_at
+      properties:
+        aggregate_type:
+          type: string
+        aggregate_id:
+          type: string
+        source_system:
+          type: string
+          description: Para evitar loops (Loop Protection). Ej. "NOTION", "APPLE", "SYSTEM"
+        occurred_at:
+          type: string
+          format: date-time
+    TaskCompletedPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseEventPayload'
+        - type: object
+          properties:
+            task_type:
+              type: string
+              enum: [TASK, HABIT, LEAD_MEASURE, LEARNING_SESSION]
+            actual_duration_minutes:
+              type: integer
+    FinanceTransactionPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseEventPayload'
+        - type: object
+          properties:
+            amount:
+              type: number
+            currency:
+              type: string
+            type:
+              type: string
+              enum: [INCOME, EXPENSE, TRANSFER]
+    LearningSessionPayload:
+      allOf:
+        - $ref: '#/components/schemas/BaseEventPayload'
+        - type: object
+          properties:
+            topic_id:
+              type: string
+              format: uuid

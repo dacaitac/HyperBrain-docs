@@ -59,7 +59,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:pymdownx.superfences.fence_mermaid_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -81,8 +81,10 @@ nav:
       - Sesión JAD: 01-product/jad-session.md
       - Épicas:
           - 01-product/epics/index.md
-      - Backlog MVP:
+      - Requerimientos:
           - 01-product/requirements/index.md
+          - Requerimientos Funcionales: 01-product/requirements/functional.md
+          - Requerimientos No Funcionales: 01-product/requirements/non-functional.md
           - HU-01 Generación de Agenda: 01-product/requirements/HU-01.md
           - HU-02 Replanificación: 01-product/requirements/HU-02.md
           - HU-03 Captura de Ideas: 01-product/requirements/HU-03.md

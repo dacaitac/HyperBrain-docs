@@ -1,6 +1,11 @@
 # Backlog MVP — Historias de Usuario
 
-Este directorio contiene las historias de usuario individuales del backlog del MVP, organizadas por dominio.
+Este directorio contiene los requerimientos formales y las historias de usuario individuales del backlog del MVP, organizadas por dominio.
+
+## Requerimientos Globales
+
+- [Requerimientos Funcionales (RF)](functional.md)
+- [Requerimientos No Funcionales (RNF)](non-functional.md)
 
 ## Dominio: Agenda y Productividad
 
