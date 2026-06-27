@@ -11,13 +11,13 @@ theme:
   language: es
   palette:
     - scheme: slate
-      primary: deep purple
+      primary: deep orange
       accent: cyan
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
     - scheme: default
-      primary: deep purple
+      primary: deep orange
       accent: cyan
       toggle:
         icon: material/brightness-7
@@ -74,16 +74,18 @@ markdown_extensions:
 
 nav:
   - Inicio: index.md
+  - Requerimientos: 
+      - Sesión JAD: requirements/JAD.md
+  - Arquitectura:
+      - Visión General: architecture/overview.md
+      - Modelo de Datos (ERD): architecture/data-model.md
+      - Flujo del Sistema: architecture/system-flow.md
+      - Diagramas (Eraser.io): architecture/diagrams.md
   - Guía de Inicio:
       - Instalación: getting-started/installation.md
       - Configuración: getting-started/configuration.md
-  - Arquitectura:
-      - Visión General: architecture/overview.md
-      - Flujo del Sistema: architecture/system-flow.md
-      - Diagramas (Eraser.io): architecture/diagrams.md
   - API:
-      - Referencia: api/reference.md
-  - Contribuir: contributing.md
+      - Referencia: api/reference.md  
 
 extra:
   social:
