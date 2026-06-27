@@ -429,6 +429,7 @@ A medida que el ecosistema crezca, los nuevos casos de uso no se programarán co
 | `DailyAgendaRequestedEvent` | Cronjob (05:30 AM) / Manual | Invoca al `Prioritizer` y `Planner Engines`. Lee telemetría de la noche anterior. | Crea o actualiza instancias de `core_executable` tipo `agenda` para el día en curso. |
 | `BiometricSleepLoggedEvent` | Apple Health / Webhook | Analiza la calidad del sueño (Sleep Score). | Inserta en `tel_sleep_record`. Disminuye el tope de `energy_drain` disponible para el `Agenda Planner` del día. |
 | `IdeaCapturedEvent` | WhatsApp Webhook | Llama al LLM para analizar la semántica y etiquetar. | Inserta en `brain_idea` con estado `raw` o `refining`. Ingiere el contenido en la base vectorial (RAG). |
+| `LearningSessionTriggeredEvent` | Sentinel / Core | Al completarse un `core_executable` de tipo estudio, el `iaService` evalúa el historial (`LRN_TOPIC`), decide el Prompt IA (A, B, C, D, E) e inicia la sesión interactiva. | Inserta evaluación en `LRN_ASSESSMENT`, actualiza maestría en `LRN_TOPIC` y reprograma el próximo bloque de estudio (Spaced Repetition). |
 
 > [!NOTE] Comentarios sobre el Catálogo de Eventos:
 > (Añade aquí nuevos eventos que se te vayan ocurriendo o lógica adicional que deba ejecutarse cuando ocurran los eventos listados.)

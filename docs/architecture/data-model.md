@@ -185,6 +185,34 @@ erDiagram
         OffsetDateTime occurred_at
     }
 
+    %% --- LEARNING DOMAIN (Study Manager) ---
+    CORE_EXECUTABLE ||--o{ LRN_ASSESSMENT : "triggers evaluation"
+    LRN_TOPIC ||--o{ LRN_ASSESSMENT : "is evaluated in"
+
+    LRN_TOPIC {
+        UUID id PK
+        UUID user_id FK
+        String name
+        String description
+        String status "ACTIVE, MASTERED, ARCHIVED"
+        Integer current_score "0-100"
+        OffsetDateTime next_review_date
+    }
+
+    LRN_ASSESSMENT {
+        UUID id PK
+        UUID topic_id FK
+        UUID executable_id FK
+        Integer score_internals "0-100"
+        Integer score_architecture "0-100"
+        Integer score_production "0-100"
+        Integer score_seniority "0-100"
+        Integer score_general "0-100"
+        String identified_gaps
+        String recommended_prompt "PROMPT_A, PROMPT_B, PROMPT_C, PROMPT_D, PROMPT_E"
+        OffsetDateTime assessed_at
+    }
+
     %% --- SYNC & SYSTEM INFRASTRUCTURE ---
     SYNC_MAPPINGS {
         UUID id PK
@@ -230,7 +258,12 @@ La consistencia es mantenida por el patrón `SYNC_MAPPINGS`.
 - **`SYNC_MAPPINGS`**: Mapeo polimórfico mediante `local_id`. Almacena el `last_known_checksum` para validar que un cambio proveniente de Notion o Apple sea **real** y no producto de un evento reflejado (Loop Protection).
 - **`OUTBOX_EVENTS`**: Patrón de persistencia distribuida para inyectar con seguridad a Kafka (*Transactional Outbox*).
 
-### 4. Inteligencia Artificial (Brain & Telemetry)
+### 4. Aprendizaje Continuo (Learning Engine)
+Este módulo se acopla a la productividad para fungir como un "Gestor de Estudio" impulsado por IA:
+- **`LRN_TOPIC`**: El tema a dominar. Rastrea su estado de maestría (`current_score`) y la fecha de su próximo repaso espaciado.
+- **`LRN_ASSESSMENT`**: Registro inmutable de cada sesión de estudio (evaluada por la IA). Guarda puntajes específicos (Internals, Architecture, Production) y detecta las brechas técnicas. Su resultado dicta qué Prompt (A, B, C, D o E) debe utilizarse en la siguiente iteración. Está fuertemente ligado a un `CORE_EXECUTABLE` para integrar el esfuerzo cognitivo con el `Agenda Planner`.
+
+### 5. Inteligencia Artificial (Brain & Telemetry)
 Las tablas de este dominio actúan como el histórico *crudo* que consultan el RAG y los LLMs:
 - **`TEL_SLEEP_RECORD` / `TEL_ACTIVITY_STREAM`**: Sensores pasivos que afectan directamente los multiplicadores de la fórmula del `Agenda Planner`.
 - **`BRAIN_IDEA`**: Ingesta NLP cruda antes de ser refinada en un `CORE_EXECUTABLE`.

@@ -79,6 +79,7 @@ nav:
   - Arquitectura:
       - Visión General: architecture/overview.md
       - Modelo de Datos (ERD): architecture/data-model.md
+      - Motor de Aprendizaje: architecture/learning-engine.md
       - Flujo del Sistema: architecture/system-flow.md
       - Diagramas (Eraser.io): architecture/diagrams.md
   - Guía de Inicio:
