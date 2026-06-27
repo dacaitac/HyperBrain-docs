@@ -1,6 +1,6 @@
 site_name: HyperBrain Docs
 site_url: https://dacaitac.github.io/HyperBrain-docs/
-site_description: Documentación oficial del proyecto HyperBrain
+site_description: Base de conocimiento de ingeniería del proyecto HyperBrain
 site_author: dacaitac
 
 repo_name: dacaitac/HyperBrain-docs
@@ -32,6 +32,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -74,19 +75,56 @@ markdown_extensions:
 
 nav:
   - Inicio: index.md
-  - Requerimientos: 
-      - Sesión JAD: requirements/JAD.md
+  - Producto:
+      - 01-product/index.md
+      - Visión del Producto: 01-product/vision.md
+      - Sesión JAD: 01-product/jad-session.md
+      - Épicas:
+          - 01-product/epics/index.md
+      - Backlog MVP:
+          - 01-product/requirements/index.md
+          - HU-01 Generación de Agenda: 01-product/requirements/HU-01.md
+          - HU-02 Replanificación: 01-product/requirements/HU-02.md
+          - HU-03 Captura de Ideas: 01-product/requirements/HU-03.md
+          - HU-04 Evaluación IA: 01-product/requirements/HU-04.md
+          - HU-05 Throttling: 01-product/requirements/HU-05.md
+          - HU-06 Transacciones: 01-product/requirements/HU-06.md
+          - HU-07 Presupuestos: 01-product/requirements/HU-07.md
+          - HU-08 Metas Financieras: 01-product/requirements/HU-08.md
+          - HU-09 Sync iOS: 01-product/requirements/HU-09.md
+          - HU-10 Sync Notion: 01-product/requirements/HU-10.md
+          - HU-11 Tolerancia Fallos: 01-product/requirements/HU-11.md
+          - HU-12 Despliegue: 01-product/requirements/HU-12.md
+          - HU-13 Observabilidad: 01-product/requirements/HU-13.md
   - Arquitectura:
-      - Visión General: architecture/overview.md
-      - Modelo de Datos (ERD): architecture/data-model.md
-      - Motor de Aprendizaje: architecture/learning-engine.md
-      - Flujo del Sistema: architecture/system-flow.md
-      - Diagramas (Eraser.io): architecture/diagrams.md
-  - Guía de Inicio:
-      - Instalación: getting-started/installation.md
-      - Configuración: getting-started/configuration.md
-  - API:
-      - Referencia: api/reference.md  
+      - 02-architecture/index.md
+      - Stack Tecnológico: 02-architecture/tech-stack.md
+      - Despliegue: 02-architecture/deployment.md
+      - Componentes: 02-architecture/components.md
+      - Modelo de Datos (ERD): 02-architecture/data-model.md
+      - Diagramas Eraser: 02-architecture/diagrams.md
+      - Motores:
+          - Prioritizer: 02-architecture/engines/prioritizer.md
+          - Agenda Planner: 02-architecture/engines/planner.md
+          - Learning Engine: 02-architecture/engines/learning.md
+          - Finance Engine: 02-architecture/engines/finance.md
+          - Messaging (EDA): 02-architecture/engines/messaging.md
+      - Bases Teóricas:
+          - 4DX: 02-architecture/theory/4dx.md
+          - GTD: 02-architecture/theory/gtd.md
+          - Spaced Repetition: 02-architecture/theory/spaced-repetition.md
+          - Triángulo de Control: 02-architecture/theory/triangle-of-control.md
+  - ADRs:
+      - 03-adrs/index.md
+      - ADR-001 SQS vs Kafka: 03-adrs/ADR-001-sqs-over-kafka.md
+  - Contratos:
+      - 04-contracts/index.md
+  - Ecosistema:
+      - 05-ecosystem/index.md
+  - Agentes y Skills:
+      - 06-agents-and-skills/index.md
+  - Workflows:
+      - 07-workflows/index.md
 
 extra:
   social:

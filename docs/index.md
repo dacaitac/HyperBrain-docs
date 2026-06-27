@@ -1,31 +1,22 @@
-# HyperBrain
+# HyperBrain — Base de Conocimiento de Ingeniería
 
-Bienvenido a la documentación oficial de **HyperBrain**.
+Bienvenido a la documentación oficial del proyecto **HyperBrain**: un Ecosistema de Orquestación Productiva, Financiera y Cognitiva.
+
+Este sitio funciona como la **fuente de verdad ejecutable** del proyecto. Está diseñado para ser consumido, validado y expandido tanto por humanos como por agentes de IA.
 
 ---
 
-## ¿Qué es HyperBrain?
-
-HyperBrain es un proyecto diseñado para potenciar el desarrollo y la gestión de conocimiento. Esta documentación te guiará a través de la instalación, configuración, arquitectura y uso de la API.
-
-## Inicio Rápido
-
-```bash
-# Clona el repositorio
-git clone https://github.com/dacaitac/HyperBrain-docs.git
-
-# Entra al directorio
-cd HyperBrain-docs
-```
-
-## Secciones
+## Navegación
 
 | Sección | Descripción |
-|---|---|
-| [Guía de Inicio](getting-started/installation.md) | Instalación y configuración paso a paso |
-| [Arquitectura](architecture/overview.md) | Visión general del diseño del sistema |
-| [API](api/reference.md) | Referencia completa de la API |
-| [Contribuir](contributing.md) | Cómo contribuir al proyecto |
+| :--- | :--- |
+| [Producto](01-product/vision.md) | Visión, requerimientos y backlog del MVP. |
+| [Arquitectura](02-architecture/index.md) | Stack tecnológico, despliegue, motores de ejecución y modelo de datos. |
+| [ADRs](03-adrs/index.md) | Decisiones arquitectónicas registradas (Architecture Decision Records). |
+| [Contratos](04-contracts/index.md) | Especificaciones OpenAPI (REST) y AsyncAPI (Eventos). |
+| [Ecosistema](05-ecosystem/index.md) | Registro de componentes, repositorios e integraciones. |
+| [Agentes y Skills](06-agents-and-skills/index.md) | Documentación de agentes de IA y sus capacidades. |
+| [Workflows](07-workflows/index.md) | Flujos de secuencia y ciclos de automatización. |
 
 !!! tip "¿Primera vez aquí?"
-    Te recomendamos empezar por la [Guía de Instalación](getting-started/installation.md).
+    Comienza por la [Visión del Producto](01-product/vision.md) para entender el propósito y alcance de HyperBrain, luego revisa la [Arquitectura](02-architecture/index.md) para comprender cómo se implementa.
